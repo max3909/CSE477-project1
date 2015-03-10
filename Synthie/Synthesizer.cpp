@@ -100,6 +100,14 @@ bool CSynthesizer::Generate(double * frame)
 			m_waveinstfactory.SetNote(note);
 			instrument = m_waveinstfactory.CreateInstrument();
 		}
+		else if (note->Instrument() == L"Echo")
+		{
+			m_echo.SetNote(note);
+		}
+		else if (note->Instrument() == L"Chorus")
+		{
+			m_chorus.SetNote(note);
+		}
 
 		// Configure the instrument object
 		if (instrument != NULL)
@@ -116,7 +124,14 @@ bool CSynthesizer::Generate(double * frame)
 	//
 	// Phase 2: Clear all channels to silence 
 	//
-
+	double channelframes[5][2];
+	for (int i = 0; i<5; i++)
+	{
+		for (int c = 0; c<GetNumChannels(); c++)
+		{
+			channelframes[i][c] = 0;
+		}
+	}
 	for (int c = 0; c<GetNumChannels(); c++)
 	{
 		frame[c] = 0;
@@ -146,11 +161,21 @@ bool CSynthesizer::Generate(double * frame)
 		// Call the generate function
 		if (instrument->Generate())
 		{
-			// If we returned true, we have a valid sample.  Add it 
+			/*// If we returned true, we have a valid sample.  Add it 
 			// to the frame.
 			for (int c = 0; c<GetNumChannels(); c++)
 			{
 				frame[c] += instrument->Frame(c);
+				
+			}*/
+			// If we returned true, we have a valid sample.  Add it 
+			// to the frame for each channel
+			for (int i = 0; i<5; i++)
+			{
+				for (int c = 0; c<GetNumChannels(); c++)
+				{
+					channelframes[i][c] += instrument->Frame(c) * instrument->Send(i);
+				}
 			}
 		}
 		else
@@ -159,6 +184,14 @@ bool CSynthesizer::Generate(double * frame)
 			// from the list and delete it from memory.
 			m_instruments.erase(node);
 			delete instrument;
+		}
+
+		for (int i = 0; i<5; i++)
+		{
+			for (int c = 0; c<GetNumChannels(); c++)
+			{
+				frame[c] += channelframes[i][c];
+			}
 		}
 
 		// Move to the next instrument in the list

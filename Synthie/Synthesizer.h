@@ -7,6 +7,8 @@ using namespace std;
 #include "Note.h"
 #include "OddSinesFactory.h"
 #include "WaveInstrumentFactory.h"
+#include "Chorus.h"
+#include "Echo.h"
 class CSynthesizer
 {
 public:
@@ -48,8 +50,13 @@ private:
 	double m_beat;              //!< The current beat within the measure
 	std::list<CInstrument *>  m_instruments;
 	std::vector<CNote> m_notes;
+
 	COddSinesFactory m_oddsinesfactory;
 	CWaveInstrumentFactory m_waveinstfactory;
+	CChorus m_chorus;
+	CEcho m_echo;
+
+
 public:
 	void Start();
 	bool Generate(double*);
@@ -58,5 +65,6 @@ private:
 public:
 	// Get the time since we started generating audio
 	double GetTime();
+
 };
 
