@@ -15,6 +15,8 @@ private:
 public:
 	void SetSource(CAudioNode* const &source) { m_source = source; }
 	void SetDuration(double d) { m_duration = d; }
+	void SetAttack(double a) { m_attack = a; }
+	void SetRelease(double r) { m_release = r; }
 	virtual void Start();
 	virtual bool Generate();
 };

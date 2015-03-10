@@ -5,6 +5,7 @@ using namespace std;
 #include "msxml2.h"
 #include "Instrument.h"
 #include "Note.h"
+#include "OddSinesFactory.h"
 class CSynthesizer
 {
 public:
@@ -46,6 +47,7 @@ private:
 	double m_beat;              //!< The current beat within the measure
 	std::list<CInstrument *>  m_instruments;
 	std::vector<CNote> m_notes;
+	COddSinesFactory m_oddsinesfactory;
 public:
 	void Start();
 	bool Generate(double*);

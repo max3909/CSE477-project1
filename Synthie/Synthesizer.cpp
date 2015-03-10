@@ -2,6 +2,7 @@
 #include "Synthesizer.h"
 #include "Instrument.h"
 #include "ToneInstrument.h"
+#include "OddSinesInstrument.h"
 #include "xmlhelp.h"
 #include <vector>
 #include <algorithm>
@@ -82,6 +83,11 @@ bool CSynthesizer::Generate(double * frame)
 		if (note->Instrument() == L"ToneInstrument")
 		{
 			instrument = new CToneInstrument(GetBeatsPerMinute());
+		}
+		else if (note->Instrument() == L"OddSines")
+		{
+			m_oddsinesfactory.SetNote(note);
+			instrument = m_oddsinesfactory.CreateInstrument();
 		}
 
 		// Configure the instrument object
