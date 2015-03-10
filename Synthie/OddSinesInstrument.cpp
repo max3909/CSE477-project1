@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "OddSinesInstrument.h"
 #include "Notes.h"
+#include <fstream>
+
+using std::ofstream;
+using std::endl;
 
 
 COddSinesInstrument::COddSinesInstrument()
@@ -14,12 +18,19 @@ COddSinesInstrument::~COddSinesInstrument()
 
 void COddSinesInstrument::Start()
 {
-	m_ar.SetSampleRate(GetSampleRate());
-	m_ar.Start();
-	m_time = 0;
 	m_sines.SetSampleRate(GetSampleRate());
+
 	m_sines.Start();
 	m_ar.SetSource(&m_sines);
+	
+	m_ar.SetSampleRate(GetSampleRate());
+	
+	m_ar.Start();
+	
+	m_time = 0;
+	
+	
+	
 }
 
 
@@ -64,6 +75,26 @@ void COddSinesInstrument::SetNote(CNote *note)
 		{
 			value.ChangeType(VT_R8);
 			m_ar.SetRelease(value.dblVal);
+		}
+		else if (name == "a1")
+		{
+			value.ChangeType(VT_R8);
+			m_sines.SetAmplitude(0, value.dblVal);
+		}
+		else if (name == "a3")
+		{
+			value.ChangeType(VT_R8);
+			m_sines.SetAmplitude(1, value.dblVal);
+		}
+		else if (name == "a5")
+		{
+			value.ChangeType(VT_R8);
+			m_sines.SetAmplitude(2, value.dblVal);
+		}
+		else if (name == "a7")
+		{
+			value.ChangeType(VT_R8);
+			m_sines.SetAmplitude(3, value.dblVal);
 		}
 	}
 

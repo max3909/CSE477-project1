@@ -1,5 +1,9 @@
 #include "stdafx.h"
 #include "AR.h"
+#include <fstream>
+
+using std::ofstream;
+using std::endl;
 
 
 CAR::CAR()
@@ -16,9 +20,12 @@ CAR::~CAR()
 
 void CAR::Start()
 {
+	
+	
 	m_source->SetSampleRate(GetSampleRate());
 	m_source->Start();
 	m_time = 0;
+
 }
 
 bool CAR::Generate()

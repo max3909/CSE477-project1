@@ -4,8 +4,12 @@
 #include "ToneInstrument.h"
 #include "OddSinesInstrument.h"
 #include "xmlhelp.h"
+#include <fstream>
 #include <vector>
 #include <algorithm>
+
+using std::ofstream;
+using std::endl;
 
 CSynthesizer::CSynthesizer()
 : m_time(0)
@@ -16,7 +20,8 @@ CSynthesizer::CSynthesizer()
 	m_samplePeriod = 1 / m_sampleRate;
 	m_bpm = 120;            
 	m_beatspermeasure = 4;
-	m_secperbeat = 0.5;     
+	m_secperbeat = 0.5;   
+	m_waveinstfactory.LoadFile("drumriff.wav");
 }
 
 
@@ -86,8 +91,14 @@ bool CSynthesizer::Generate(double * frame)
 		}
 		else if (note->Instrument() == L"OddSines")
 		{
+			
 			m_oddsinesfactory.SetNote(note);
 			instrument = m_oddsinesfactory.CreateInstrument();
+		}
+		else if (note->Instrument() == L"Wave")
+		{
+			m_waveinstfactory.SetNote(note);
+			instrument = m_waveinstfactory.CreateInstrument();
 		}
 
 		// Configure the instrument object

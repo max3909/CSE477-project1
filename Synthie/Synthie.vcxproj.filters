@@ -84,6 +84,15 @@
     <ClCompile Include="OddSinesFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WavePlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WaveInstrument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WaveInstrumentFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio\DirSound.h">
@@ -162,6 +171,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OddSinesFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WavePlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WaveInstrument.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WaveInstrumentFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
