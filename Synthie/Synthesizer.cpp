@@ -161,13 +161,13 @@ bool CSynthesizer::Generate(double * frame)
 		// Call the generate function
 		if (instrument->Generate())
 		{
-			/*// If we returned true, we have a valid sample.  Add it 
-			// to the frame.
-			for (int c = 0; c<GetNumChannels(); c++)
+			
+			/*for (int c = 0; c<GetNumChannels(); c++)
 			{
 				frame[c] += instrument->Frame(c);
 				
 			}*/
+
 			// If we returned true, we have a valid sample.  Add it 
 			// to the frame for each channel
 			for (int i = 0; i<5; i++)
@@ -187,24 +187,32 @@ bool CSynthesizer::Generate(double * frame)
 		}
 
 		// Phase 3a: Effects
-
-		for (int i = 0; i<5; i++)
-		{
-			for (int c = 0; c<GetNumChannels(); c++)
-			{
-				switch (i){
-				case 0:
-					frame[c] += channelframes[i][c];
-
-				case 1:
-					//m_echo.Process(&channelframes[i][c], &frame[c]);
-
-				case 2:
-					//m_chorus.Process(&channelframes[i][c], &frame[c]);
-					;
-				}
-			}
+		double frames[2];
+		for (int c = 0; c < GetNumChannels(); c++){
+			frames[c] = channelframes[0][c];
 		}
+
+		double eframes[2];
+		for (int c = 0; c < GetNumChannels(); c++){
+			eframes[c] = channelframes[1][c];
+		}
+
+		double cframes[2];
+		for (int c = 0; c < GetNumChannels(); c++){
+			cframes[c] = channelframes[2][c];
+		}
+
+		if (eframes[0] != 0){
+			m_echo.Process(eframes, frame);
+		}
+		if (cframes[0] != 0){
+			m_chorus.Process(cframes, frame);
+		}
+		
+		for (int c = 0; c < GetNumChannels(); c++){
+			frame[c] += frames[c];
+		}
+		
 
 		// Move to the next instrument in the list
 		node = next;
