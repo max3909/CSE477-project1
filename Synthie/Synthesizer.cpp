@@ -62,6 +62,8 @@ bool CSynthesizer::Generate(double * frame)
 	//
 	// Phase 1: Determine if any notes need to be played.
 	//
+	bool send1 = false;
+	bool send2 = false;
 
 	while (m_currentNote < (int)m_notes.size())
 	{
@@ -103,6 +105,7 @@ bool CSynthesizer::Generate(double * frame)
 		else if (note->Instrument() == L"Echo")
 		{
 			m_echo.SetNote(note);
+			send1 = true;
 		}
 		else if (note->Instrument() == L"Chorus")
 		{
@@ -161,7 +164,9 @@ bool CSynthesizer::Generate(double * frame)
 		// Call the generate function
 		if (instrument->Generate())
 		{
-			
+			if (send1){
+				instrument->setSend(1, 1);
+			}
 			/*for (int c = 0; c<GetNumChannels(); c++)
 			{
 				frame[c] += instrument->Frame(c);
@@ -174,6 +179,7 @@ bool CSynthesizer::Generate(double * frame)
 			{
 				for (int c = 0; c<GetNumChannels(); c++)
 				{
+					
 					channelframes[i][c] += instrument->Frame(c) * instrument->Send(i);
 				}
 			}

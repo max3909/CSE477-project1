@@ -18,5 +18,8 @@
        
           <note measure="7" beat="1" duration="3" note="Bb4"/>
      </instrument>
+     <instrument instrument = "Echo">
+	  <note measure="3" beat="1.25" wet="0.5" dry="0.25" delay="1.5"/>
+     </instrument>
 </score>
 

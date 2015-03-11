@@ -12,6 +12,7 @@ public:
 
 public:
 	double Send(int i) { return sends[i]; }
+	void setSend(int i, double send) { sends[i] = send; }
 
 private:
 	double sends[5];
