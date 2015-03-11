@@ -186,11 +186,25 @@ bool CSynthesizer::Generate(double * frame)
 			delete instrument;
 		}
 
+		// Phase 3a: Effects
+
+		
+
 		for (int i = 0; i<5; i++)
 		{
 			for (int c = 0; c<GetNumChannels(); c++)
 			{
-				frame[c] += channelframes[i][c];
+				switch (i){
+				case 0:
+					frame[c] += channelframes[i][c];
+
+				case 1:
+					//m_echo.Process(&channelframes[i][c], &frame[c]);
+
+				case 2:
+					//m_chorus.Process(&channelframes[i][c], &frame[c]);
+					;
+				}
 			}
 		}
 

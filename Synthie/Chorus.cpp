@@ -58,6 +58,19 @@ void CChorus::SetNote(CNote *note){
 
 		CComVariant value;
 		attrib->get_nodeValue(&value);
+
+		if (name == "wet"){
+			value.ChangeType(VT_R8);
+			SetWet(value.dblVal);
+		}
+		else if (name == "dry"){
+			value.ChangeType(VT_R8);
+			SetDry(value.dblVal);
+		}
+		else if (name == "delay"){
+			value.ChangeType(VT_R8);
+
+		}
 	}
 
 }
