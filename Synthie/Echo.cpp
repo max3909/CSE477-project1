@@ -5,6 +5,7 @@ const int QSIZE = 200000;
 
 CEcho::CEcho()
 {
+	m_queue.resize(QSIZE);
 }
 
 
@@ -21,6 +22,8 @@ bool CEcho::Generate(){
 }
 
 void CEcho::Process(double *frameIn, double *frameOut){
+	m_dry = 0.25;
+	m_wet = 0.5;
 	// Loop over the channels
 	for (int c = 0; c<2; c++)
 	{

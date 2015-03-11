@@ -188,8 +188,6 @@ bool CSynthesizer::Generate(double * frame)
 
 		// Phase 3a: Effects
 
-		
-
 		for (int i = 0; i<5; i++)
 		{
 			for (int c = 0; c<GetNumChannels(); c++)

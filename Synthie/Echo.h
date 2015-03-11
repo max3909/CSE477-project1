@@ -24,8 +24,8 @@ private:
 	double m_wet;
 	double m_delay;
 	std::vector<short> m_queue;
-	int m_wrloc;
-	int m_rdloc;
+	int m_wrloc = 0;
+	int m_rdloc = 0;
 
 };
 
