@@ -193,24 +193,26 @@ bool CSynthesizer::Generate(double * frame)
 		}
 
 		double eframes[2];
-		for (int c = 0; c < GetNumChannels(); c++){
-			eframes[c] = channelframes[1][c];
+		for (int c = 0; c < 2; c++){
+			eframes[c] = 0;
 		}
 
 		double cframes[2];
-		for (int c = 0; c < GetNumChannels(); c++){
-			cframes[c] = channelframes[2][c];
+		for (int c = 0; c < 2; c++){
+			cframes[c] = 0;
 		}
 
-		if (eframes[0] != 0){
-			m_echo.Process(eframes, frame);
+		if (channelframes[1][0] != 0){
+			m_echo.Process(channelframes[1], eframes);
 		}
-		if (cframes[0] != 0){
-			m_chorus.Process(cframes, frame);
+		if (channelframes[2][0] != 0){
+			m_chorus.Process(channelframes[2], cframes);
 		}
 		
 		for (int c = 0; c < GetNumChannels(); c++){
 			frame[c] += frames[c];
+			frame[c] += eframes[c];
+			frame[c] += cframes[c];
 		}
 		
 
