@@ -24,5 +24,14 @@ public:
 	void operator=(const CSubtractive &) = delete;
 
 	virtual ~CSubtractive();
+
+	void SquareWave(double time);
+
+	void SetFrequency(double f) { m_freq = f; }
+
+private:
+
+	double m_freq;
+
 };
 
