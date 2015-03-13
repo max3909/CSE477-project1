@@ -25,7 +25,12 @@ public:
 
 	virtual ~CSubtractive();
 
+	virtual void Start() {}
+	virtual bool Generate() { return false; }
+	virtual void SetNote(CNote *note) {}
+
 	void SquareWave(double time);
+	void SawtoothWave(double time);
 
 	void SetFrequency(double f) { m_freq = f; }
 

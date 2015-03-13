@@ -129,6 +129,14 @@ BEGIN
         MENUITEM "&1000Hz Tone",                ID_GENERATE_1000HZTONE
         MENUITEM "Synthesizer",                 ID_GENERATE_SYNTHESIZER
     END
+    POPUP "&Test"
+    BEGIN
+        POPUP "S&ubtractive"
+        BEGIN
+            MENUITEM "S&quare",                     ID_SUBTRACTIVE_SQUARE
+            MENUITEM "Saw&tooth",                   ID_SUBTRACTIVE_SAWTOOTH
+        END
+    END
     POPUP "&Edit"
     BEGIN
         MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
@@ -180,7 +188,6 @@ BEGIN
     "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
     "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
 END
-
 
 
 /////////////////////////////////////////////////////////////////////////////

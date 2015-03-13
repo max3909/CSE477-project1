@@ -4,6 +4,7 @@
 
 #include "stdafx.h"
 #include "Synthie.h"
+#include "Subtractive.h"
 #include "SynthieView.h"
 #include <cmath>
 
@@ -45,6 +46,8 @@ BEGIN_MESSAGE_MAP(CSynthieView, CWnd)
 	ON_COMMAND(ID_GENERATE_1000HZTONE, &CSynthieView::OnGenerate1000hztone)
 	ON_COMMAND(ID_GENERATE_SYNTHESIZER, &CSynthieView::OnGenerateSynthesizer)
 	ON_COMMAND(ID_FILE_OPENSCORE, &CSynthieView::OnFileOpenscore)
+	ON_COMMAND(ID_SUBTRACTIVE_SQUARE, &CSynthieView::OnSubtractiveSquare)
+	ON_COMMAND(ID_SUBTRACTIVE_SAWTOOTH, &CSynthieView::OnSubtractiveSawtooth)
 END_MESSAGE_MAP()
 
 
@@ -258,4 +261,68 @@ void CSynthieView::OnFileOpenscore()
 		return;
 
 	m_synthesizer.OpenScore(dlg.GetPathName());
+}
+
+
+void CSynthieView::OnSubtractiveSquare()
+{
+	CSubtractive sub;
+
+	// Call to open the generator output
+	if (!GenerateBegin())
+		return;
+
+	short audio[2];
+
+	double freq = 1000;
+	double duration = 5;
+
+	for (double time = 0.; time < duration; time += 1. / SampleRate())
+	{
+		sub.SquareWave(time);
+		audio[0] = sub.Frame(0);
+		audio[1] = audio[0];
+
+		GenerateWriteFrame(audio);
+
+		// The progress control
+		if (ProgressAbortCheck())
+			break;
+	}
+
+
+	// Call to close the generator output
+	GenerateEnd();
+}
+
+
+void CSynthieView::OnSubtractiveSawtooth()
+{
+	CSubtractive sub;
+
+	// Call to open the generator output
+	if (!GenerateBegin())
+		return;
+
+	short audio[2];
+
+	double freq = 1000;
+	double duration = 5;
+
+	for (double time = 0.; time < duration; time += 1. / SampleRate())
+	{
+		sub.SawtoothWave(time);
+		audio[0] = sub.Frame(0);
+		audio[1] = audio[0];
+
+		GenerateWriteFrame(audio);
+
+		// The progress control
+		if (ProgressAbortCheck())
+			break;
+	}
+
+
+	// Call to close the generator output
+	GenerateEnd();
 }
