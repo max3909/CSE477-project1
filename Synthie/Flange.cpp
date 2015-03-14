@@ -1,28 +1,27 @@
 #include "stdafx.h"
-#include "Chorus.h"
-
+#include "Flange.h"
 
 const int QSIZE = 200000;
 const double M_PI = 3.14159265359;
 
-CChorus::CChorus()
+CFlange::CFlange()
 {
 }
 
 
-CChorus::~CChorus()
+CFlange::~CFlange()
 {
 }
 
-void CChorus::Start()
+void CFlange::Start()
 {
 }
 
-bool CChorus::Generate(){
+bool CFlange::Generate(){
 	return true;
 }
 
-void CChorus::Process(double *frameIn, double *frameOut){
+void CFlange::Process(double *frameIn, double *frameOut){
 	// Loop over the channels
 	for (int c = 0; c<2; c++)
 	{
@@ -38,7 +37,7 @@ void CChorus::Process(double *frameIn, double *frameOut){
 	m_rdloc = (m_wrloc + QSIZE - delaylength) % QSIZE;
 }
 
-void CChorus::SetNote(CNote *note){
+void CFlange::SetNote(CNote *note){
 	// Get a list of all attribute nodes and the
 	// length of that list
 	CComPtr<IXMLDOMNamedNodeMap> attributes;

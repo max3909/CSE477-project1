@@ -33,7 +33,7 @@ void CEcho::Process(double *frameIn, double *frameOut){
 		frameOut[c] = m_dry * frameIn[c] + m_wet * m_queue[m_rdloc + c];
 	}
 
-	//int delaylength = int((m_delay * GetSampleRate() + 0.5)) * 2;
+	
 	m_wrloc = (m_wrloc + 2) % QSIZE;
 	m_rdloc = (m_rdloc + 2) % QSIZE;
 }
