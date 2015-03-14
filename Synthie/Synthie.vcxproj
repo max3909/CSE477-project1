@@ -159,6 +159,7 @@
     <ClCompile Include="WaveInstrument.cpp" />
     <ClCompile Include="WaveInstrumentFactory.cpp" />
     <ClCompile Include="WavePlayer.cpp" />
+    <ClCompile Include="Wavetable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AR.h" />
@@ -193,6 +194,7 @@
     <ClInclude Include="WaveInstrument.h" />
     <ClInclude Include="WaveInstrumentFactory.h" />
     <ClInclude Include="WavePlayer.h" />
+    <ClInclude Include="Wavetable.h" />
     <ClInclude Include="xmlhelp.h" />
   </ItemGroup>
   <ItemGroup>
