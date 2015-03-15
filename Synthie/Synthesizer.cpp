@@ -225,27 +225,46 @@ bool CSynthesizer::Generate(double * frame)
 			frames[c] = channelframes[0][c];
 		}
 
-		double eframes[2];
-		for (int c = 0; c < 2; c++){
-			eframes[c] = 0;
-		}
 
 		double cframes[2];
 		for (int c = 0; c < 2; c++){
 			cframes[c] = 0;
 		}
 
+		double fframes[2];
+		for (int c = 0; c < 2; c++){
+			fframes[c] = 0;
+		}
+		
+		double nframes[2];
+		for (int c = 0; c < 2; c++){
+			nframes[c] = 0;
+		}
+
+		double rframes[2];
+		for (int c = 0; c < 2; c++){
+			rframes[c] = 0;
+		}
+
 		if (channelframes[1][0] != 0){
-			m_echo.Process(channelframes[1], eframes);
+			m_chorus.Process(channelframes[1], cframes);
 		}
 		if (channelframes[2][0] != 0){
-			m_chorus.Process(channelframes[2], cframes);
+			m_flange.Process(channelframes[2], fframes);
+		}
+		if (channelframes[3][0] != 0){
+			m_noiseGate.Process(channelframes[3], nframes);
+		}
+		if (channelframes[4][0] != 0){
+			m_reverb.Process(channelframes[4], rframes);
 		}
 		
 		for (int c = 0; c < GetNumChannels(); c++){
 			frame[c] += frames[c];
-			frame[c] += eframes[c];
 			frame[c] += cframes[c];
+			frame[c] += fframes[c];
+			frame[c] += nframes[c];
+			frame[c] += rframes[c];
 		}
 		
 
