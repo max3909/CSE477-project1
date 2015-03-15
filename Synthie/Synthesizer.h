@@ -9,6 +9,10 @@ using namespace std;
 #include "WaveInstrumentFactory.h"
 #include "Chorus.h"
 #include "Echo.h"
+#include "Flange.h"
+#include "NoiseGate.h"
+#include "Reverb.h"
+
 class CSynthesizer
 {
 public:
@@ -55,6 +59,9 @@ private:
 	CWaveInstrumentFactory m_waveinstfactory;
 	CChorus m_chorus;
 	CEcho m_echo;
+	CNoiseGate m_noiseGate;
+	CFlange m_flange;
+	CReverb m_reverb;
 
 
 public:

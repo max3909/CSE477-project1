@@ -64,6 +64,8 @@ bool CSynthesizer::Generate(double * frame)
 	//
 	bool send1 = false;
 	bool send2 = false;
+	bool send3 = false;
+	bool send4 = false;
 
 	while (m_currentNote < (int)m_notes.size())
 	{
@@ -105,11 +107,27 @@ bool CSynthesizer::Generate(double * frame)
 		else if (note->Instrument() == L"Echo")
 		{
 			m_echo.SetNote(note);
-			send1 = true;
+			
 		}
 		else if (note->Instrument() == L"Chorus")
 		{
 			m_chorus.SetNote(note);
+			send1 = true;
+		}
+		else if (note->Instrument() == L"Flange")
+		{
+			m_flange.SetNote(note);
+			send2 = true;
+		}
+		else if (note->Instrument() == L"NoiseGate")
+		{
+			m_noiseGate.SetNote(note);
+			send3 = true;
+		}
+		else if (note->Instrument() == L"Reverb")
+		{
+			m_reverb.SetNote(note);
+			send4 = true;
 		}
 
 		// Configure the instrument object
@@ -166,6 +184,15 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			if (send1){
 				instrument->setSend(1, 1);
+			}
+			if (send2){
+				instrument->setSend(2, 1);
+			}
+			if (send3){
+				instrument->setSend(3, 1);
+			}
+			if (send4){
+				instrument->setSend(4, 1);
 			}
 			/*for (int c = 0; c<GetNumChannels(); c++)
 			{
