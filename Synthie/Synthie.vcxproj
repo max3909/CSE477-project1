@@ -144,6 +144,7 @@
     <ClCompile Include="OddSinesInstrument.cpp" />
     <ClCompile Include="Progress.cpp" />
     <ClCompile Include="ProgressDlg.cpp" />
+    <ClCompile Include="Reson.cpp" />
     <ClCompile Include="Reverb.cpp" />
     <ClCompile Include="SineWave.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -182,6 +183,7 @@
     <ClInclude Include="OddSinesInstrument.h" />
     <ClInclude Include="Progress.h" />
     <ClInclude Include="ProgressDlg.h" />
+    <ClInclude Include="Reson.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Reverb.h" />
     <ClInclude Include="SineWave.h" />

@@ -114,6 +114,9 @@
     <ClCompile Include="Reverb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Reson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio\DirSound.h">
@@ -222,6 +225,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Reverb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Reson.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -13,7 +13,7 @@ using namespace std;
 
 CSubtractive::CSubtractive()
 {
-	m_freq = 1000;
+	m_freq = 500;
 }
 
 

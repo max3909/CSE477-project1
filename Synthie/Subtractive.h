@@ -36,10 +36,5 @@ public:
 
 private:
 	double m_freq; //< frequency of wave
-
-	std::vector<short> m_queue_x;
-	std::vector<short> m_queue_y;
-	int m_wrloc = 0;
-	int m_rdloc = 0;
 };
 
