@@ -136,6 +136,7 @@
     <ClCompile Include="Flange.cpp" />
     <ClCompile Include="Instrument.cpp" />
     <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="NoiseGate.cpp" />
     <ClCompile Include="Note.cpp" />
     <ClCompile Include="Notes.cpp" />
     <ClCompile Include="OddSines.cpp" />
@@ -143,6 +144,7 @@
     <ClCompile Include="OddSinesInstrument.cpp" />
     <ClCompile Include="Progress.cpp" />
     <ClCompile Include="ProgressDlg.cpp" />
+    <ClCompile Include="Reverb.cpp" />
     <ClCompile Include="SineWave.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -172,6 +174,7 @@
     <ClInclude Include="Flange.h" />
     <ClInclude Include="Instrument.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="NoiseGate.h" />
     <ClInclude Include="Note.h" />
     <ClInclude Include="Notes.h" />
     <ClInclude Include="OddSines.h" />
@@ -180,6 +183,7 @@
     <ClInclude Include="Progress.h" />
     <ClInclude Include="ProgressDlg.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Reverb.h" />
     <ClInclude Include="SineWave.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Subtractive.h" />
