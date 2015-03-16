@@ -29,7 +29,7 @@ private:
 	double m_dry;
 	double m_wet;
 	double m_delay;
-	std::vector<short> m_queue;
+	std::vector<double> m_queue;
 	int m_wrloc;
 	int m_rdloc;
 	ofstream log;

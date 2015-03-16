@@ -36,7 +36,6 @@ void CChorus::Process(double *frameIn, double *frameOut, double time){
 		m_queue[m_wrloc + c] = frameIn[c];
 
 		// Add output of the queue to the current input
-		//log << m_rdloc << endl;
 		frameOut[c] = m_dry * frameIn[c] + m_wet * m_queue[(m_rdloc + c) % QSIZE];
 	}
 

@@ -71,6 +71,10 @@ void CFlange::SetNote(CNote *note){
 			value.ChangeType(VT_R8);
 
 		}
+		else if (name == "send"){
+			value.ChangeType(VT_R8);
+			SetSend(value.dblVal);
+		}
 	}
 
 }
