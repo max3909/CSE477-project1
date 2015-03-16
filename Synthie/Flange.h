@@ -1,6 +1,10 @@
 #pragma once
 #include "Instrument.h"
 #include <vector>
+#include <fstream>
+
+using std::ofstream;
+using std::endl;
 class CFlange :
 	public CInstrument
 {
@@ -18,7 +22,7 @@ public:
 	void SetDelay(double dl) { m_delay = dl; }
 	
 
-	void Process(double *frameIn, double *frameOut);
+	void Process(double *frameIn, double *frameOut, double time);
 
 private:
 	double  m_time;
@@ -29,5 +33,6 @@ private:
 	std::vector<double> m_queue;
 	int m_wrloc;
 	int m_rdloc;
+	ofstream log;
 };
 

@@ -6,6 +6,9 @@ const double M_PI = 3.14159265359;
 
 CFlange::CFlange()
 {
+	m_queue.resize(QSIZE);
+	m_sampleRate = 44100.;
+	m_samplePeriod = 1 / m_sampleRate;
 }
 
 
@@ -15,13 +18,15 @@ CFlange::~CFlange()
 
 void CFlange::Start()
 {
+	m_wrloc = 0;
+	m_rdloc = 0;
 }
 
 bool CFlange::Generate(){
 	return true;
 }
 
-void CFlange::Process(double *frameIn, double *frameOut){
+void CFlange::Process(double *frameIn, double *frameOut, double time){
 	// Loop over the channels
 	for (int c = 0; c<2; c++)
 	{
@@ -31,8 +36,10 @@ void CFlange::Process(double *frameIn, double *frameOut){
 		frameOut[c] = m_dry * frameIn[c] + m_wet * m_queue[(m_rdloc + c) % QSIZE];
 	}
 
-	double flange = 0.006 + sin(0.25 * 2 * M_PI * m_time) * 0.004;
+	double flange = 0.006 + sin(0.25 * 2 * M_PI * time) * 0.004;
+
 	int delaylength = int((flange*GetSampleRate() + 0.5) * 2);
+
 	m_wrloc = (m_wrloc + 2) % QSIZE;
 	m_rdloc = (m_wrloc + QSIZE - delaylength) % QSIZE;
 }

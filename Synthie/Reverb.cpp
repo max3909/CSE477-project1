@@ -7,6 +7,7 @@ const double M_PI = 3.14159265359;
 
 CReverb::CReverb()
 {
+	m_queue.resize(QSIZE);
 }
 
 

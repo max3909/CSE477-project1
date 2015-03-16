@@ -6,6 +6,7 @@ const double M_PI = 3.14159265359;
 
 CNoiseGate::CNoiseGate()
 {
+	m_queue.resize(QSIZE);
 }
 
 
@@ -67,9 +68,9 @@ void CNoiseGate::SetNote(CNote *note){
 			value.ChangeType(VT_R8);
 			SetDry(value.dblVal);
 		}
-		else if (name == "delay"){
+		else if (name == "threshold"){
 			value.ChangeType(VT_R8);
-
+			SetThreshold(value.dblVal);
 		}
 	}
 

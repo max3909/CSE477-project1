@@ -273,7 +273,7 @@ bool CSynthesizer::Generate(double * frame)
 			m_chorus.Process(channelframes[1], cframes, m_time);
 		}
 		if (channelframes[2][0] != 0){
-			m_flange.Process(channelframes[2], fframes);
+			m_flange.Process(channelframes[2], fframes, m_time);
 		}
 		if (channelframes[3][0] != 0){
 			m_noiseGate.Process(channelframes[3], nframes);
@@ -283,7 +283,7 @@ bool CSynthesizer::Generate(double * frame)
 		}
 		
 		for (int c = 0; c < GetNumChannels(); c++){
-			frame[c] += frames[c];
+			//frame[c] += frames[c];
 			frame[c] += cframes[c];
 			frame[c] += fframes[c];
 			frame[c] += nframes[c];
