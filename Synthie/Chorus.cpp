@@ -30,7 +30,6 @@ bool CChorus::Generate(){
 }
 
 void CChorus::Process(double *frameIn, double *frameOut, double time){
-	log << "Processing" << endl;
 	// Loop over the channels
 	for (int c = 0; c<2; c++)
 	{
