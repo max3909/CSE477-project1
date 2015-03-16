@@ -14,6 +14,7 @@ using namespace std;
 CSubtractive::CSubtractive()
 {
 	m_freq = 500;
+	m_wavetype = 0;
 }
 
 
@@ -21,24 +22,46 @@ CSubtractive::~CSubtractive()
 {
 }
 
-void CSubtractive::SquareWave(double time)
+void CSubtractive::SquareWave()
 {
 	int num_harmonics = m_sampleRate / (2 * m_freq);
 	double sample = 0;
 	for (int i = 1; i < num_harmonics; i = i + 2)
 	{
-		sample = sample + 3200 * (1 / i) * sin(time * 2 * PI * (i*m_freq));
+		sample = sample + 3200 * (1 / i) * sin(m_phase * (i * 2 + 1));
 	}
 	m_frame[0] = m_frame[1] = sample;
 }
 
-void CSubtractive::SawtoothWave(double time)
+void CSubtractive::SawtoothWave()
 {
 	int num_harmonics = m_sampleRate / (2 * m_freq);
 	long sample = 0;
 	for (int i = 1; i < num_harmonics; i++)
 	{
-		sample = sample + 3200 * (1 / i) * sin(time * 2 * PI * (i*m_freq));
+		sample = sample + 3200 * (1 / i) * sin(m_phase * (i * 2 + 1));
 	}
 	m_frame[0] = m_frame[1] = sample;
+}
+
+void CSubtractive::Start()
+{
+	m_phase = 0;
+}
+
+bool CSubtractive::Generate()
+{
+	switch (m_wavetype)
+	{
+	case 0:
+		SquareWave();
+		break;
+	case 1:
+		SawtoothWave();
+		break;
+	default:
+		break;
+	}
+	m_phase += 2 * PI * m_freq * GetSamplePeriod();
+	return true;
 }

@@ -279,7 +279,7 @@ void CSynthieView::OnSubtractiveSquare()
 
 	for (double time = 0.; time < duration; time += 1. / SampleRate())
 	{
-		sub.SquareWave(time);
+		//sub.SquareWave(time);
 		audio[0] = sub.Frame(0);
 		audio[1] = audio[0];
 
@@ -311,7 +311,7 @@ void CSynthieView::OnSubtractiveSawtooth()
 
 	for (double time = 0.; time < duration; time += 1. / SampleRate())
 	{
-		sub.SawtoothWave(time);
+		//sub.SawtoothWave(time);
 		audio[0] = sub.Frame(0);
 		audio[1] = audio[0];
 

@@ -26,15 +26,17 @@ public:
 
 	virtual ~CSubtractive();
 
-	virtual void Start() {}
-	virtual bool Generate() { return false; }
+	virtual void Start();
+	virtual bool Generate();
 
-	void SquareWave(double time);
-	void SawtoothWave(double time);
+	void SquareWave();
+	void SawtoothWave();
 
 	void SetFrequency(double f) { m_freq = f; }
 
-private:
+protected:
 	double m_freq; //< frequency of wave
+	double m_phase;
+	short m_wavetype;
 };
 
