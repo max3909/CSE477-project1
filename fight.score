@@ -37,7 +37,7 @@
      
 
 <instrument instrument = "Wavetable">
-<note measure="1" beat="1" duration="0.5" note="Bb4"/>
+<note measure="1" beat="1" duration="0.5" note="5"/>
   
 </instrument>
 

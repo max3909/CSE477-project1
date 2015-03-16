@@ -22,6 +22,7 @@ CSynthesizer::CSynthesizer()
 	m_beatspermeasure = 4;
 	m_secperbeat = 0.5;   
 	m_waveinstfactory.LoadFile("drumriff.wav");
+	m_wavetable.LoadFile("drumriff.wav");
 }
 
 

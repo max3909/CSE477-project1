@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Wavetable.h"
 #include "Notes.h"
+#include "audio/DirSoundSource.h"
 
 CWavetable::CWavetable()
 {
@@ -52,6 +53,33 @@ bool CWavetable::Generate()
 	return valid;
 }
 
+bool CWavetable::LoadFile(const char *filename)
+{
+	m_wave.clear();
+
+	CDirSoundSource m_file;
+	if (!m_file.Open(filename))
+	{
+		CString msg = L"Unable to open audio file: ";
+		msg += filename;
+		AfxMessageBox(msg);
+		return false;
+	}
+
+	for (int i = 0; i<m_file.NumSampleFrames(); i++)
+	{
+		short frame[2];
+		m_file.ReadFrame(frame);
+		m_wave.push_back(frame[0]);
+		m_wave.push_back(frame[1]);
+	}
+	m_sounds.push_back(m_wave);
+
+	m_file.Close();
+	return true;
+}
+
+
 void CWavetable::SetNote(CNote *note)
 {
 	// Get a list of all attribute nodes and the
@@ -90,6 +118,7 @@ void CWavetable::SetNote(CNote *note)
 		else if (name == "note")
 		{
 			SetFreq(NoteToFrequency(value.bstrVal));
+			//set something at note
 		}
 	}
 }
