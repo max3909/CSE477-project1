@@ -22,7 +22,6 @@ CWavetable::~CWavetable()
 
 void CWavetable::Start()
 {
-	//m_position = 0;
 	//m_ar.SetSource(&m_sinewave);
 	m_wavePlayer.SetSampleRate(GetSampleRate());
 	m_wavePlayer.Start();
@@ -96,8 +95,8 @@ void CWavetable::SetNote(CNote *note)
 		if (name == "duration")
 		{
 			value.ChangeType(VT_R8);
-			SetDuration(value.dblVal); // play the note for the duration in terms of seconds
-			m_ar.SetDuration(value.dblVal * (NUM_SECS_IN_MINUTE / m_bpm));
+			m_wavePlayer.SetDuration(value.dblVal); // play the note for the duration in terms of seconds
+			//m_ar.SetDuration(value.dblVal * (NUM_SECS_IN_MINUTE / m_bpm));
 
 		}
 		else if (name == "note")
