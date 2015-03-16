@@ -134,6 +134,10 @@ bool CSynthesizer::Generate(double * frame)
 			send4 = true;
 			m_reverb.Start();
 		}
+		else if (note->Instrument() == L"Wavetable")
+		{
+			m_wavetable.SetNote(note);
+		}
 
 		// Configure the instrument object
 		if (instrument != NULL)
