@@ -67,6 +67,11 @@ bool CSynthesizer::Generate(double * frame)
 	bool send3 = false;
 	bool send4 = false;
 
+	double send1value = 0.0;
+	double send2value = 0.0;
+	double send3value = 0.0;
+	double send4value = 0.0;
+
 	while (m_currentNote < (int)m_notes.size())
 	{
 		// Get a pointer to the current note
@@ -114,6 +119,7 @@ bool CSynthesizer::Generate(double * frame)
 			m_chorus.SetNote(note);
 			send1 = true;
 			m_chorus.Start();
+			send1value = m_chorus.GetSend();
 			
 		}
 		else if (note->Instrument() == L"Flange")
@@ -121,18 +127,21 @@ bool CSynthesizer::Generate(double * frame)
 			m_flange.SetNote(note);
 			send2 = true;
 			m_flange.Start();
+			send2value = m_flange.GetSend();
 		}
 		else if (note->Instrument() == L"NoiseGate")
 		{
 			m_noiseGate.SetNote(note);
 			send3 = true;
 			m_noiseGate.Start();
+			send3value = m_noiseGate.GetSend();
 		}
 		else if (note->Instrument() == L"Reverb")
 		{
 			m_reverb.SetNote(note);
 			send4 = true;
 			m_reverb.Start();
+			send4value = m_reverb.GetSend();
 		}
 		else if (note->Instrument() == L"Wavetable")
 		{
@@ -192,16 +201,16 @@ bool CSynthesizer::Generate(double * frame)
 		if (instrument->Generate())
 		{
 			if (send1){
-				instrument->setSend(1, 1);
+				instrument->setSend(1, send1value);
 			}
 			if (send2){
-				instrument->setSend(2, 1);
+				instrument->setSend(2, send2value);
 			}
 			if (send3){
-				instrument->setSend(3, 1);
+				instrument->setSend(3, send3value);
 			}
 			if (send4){
-				instrument->setSend(4, 1);
+				instrument->setSend(4, send4value);
 			}
 			/*for (int c = 0; c<GetNumChannels(); c++)
 			{

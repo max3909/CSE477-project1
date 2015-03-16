@@ -17,6 +17,7 @@ public:
 	virtual bool Generate();
 	virtual void SetNote(CNote *note);
 
+
 	void SetDry(double d) { m_dry = d; }
 	void SetWet(double w) { m_wet = w; }
 	void SetDelay(double dl) { m_delay = dl; }

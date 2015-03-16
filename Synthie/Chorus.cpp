@@ -22,7 +22,7 @@ void CChorus::Start()
 	m_queue.resize(QSIZE);
 	m_wrloc = 0;
 	m_rdloc = 0;
-	log.open("log.txt");
+	//log.open("log.txt");
 }
 
 bool CChorus::Generate(){
@@ -30,6 +30,7 @@ bool CChorus::Generate(){
 }
 
 void CChorus::Process(double *frameIn, double *frameOut, double time){
+	log << "Processing" << endl;
 	// Loop over the channels
 	for (int c = 0; c<2; c++)
 	{
@@ -84,6 +85,10 @@ void CChorus::SetNote(CNote *note){
 		else if (name == "delay"){
 			value.ChangeType(VT_R8);
 
+		}
+		else if (name == "send"){
+			value.ChangeType(VT_R8);
+			SetSend(value.dblVal);
 		}
 	}
 
