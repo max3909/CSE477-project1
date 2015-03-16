@@ -142,6 +142,7 @@
     <ClCompile Include="OddSines.cpp" />
     <ClCompile Include="OddSinesFactory.cpp" />
     <ClCompile Include="OddSinesInstrument.cpp" />
+    <ClCompile Include="Polyphony.cpp" />
     <ClCompile Include="Progress.cpp" />
     <ClCompile Include="ProgressDlg.cpp" />
     <ClCompile Include="Reson.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="OddSines.h" />
     <ClInclude Include="OddSinesFactory.h" />
     <ClInclude Include="OddSinesInstrument.h" />
+    <ClInclude Include="Polyphony.h" />
     <ClInclude Include="Progress.h" />
     <ClInclude Include="ProgressDlg.h" />
     <ClInclude Include="Reson.h" />
