@@ -49,8 +49,8 @@ bool CReson::Generate()
 	outframe[0] = A * m_frame[0] + (2 * R * costheta) * m_queue_0[m_wrloc - 1] - R * R * m_queue_0[m_wrloc - 2];
 	outframe[1] = A * m_frame[1] + (2 * R * costheta) * m_queue_1[m_wrloc - 1] - R * R * m_queue_1[m_wrloc - 2];
 
-	m_frame[0] = RangeBound(m_frame[0]);
-	m_frame[1] = RangeBound(m_frame[1]);
+	m_frame[0] = RangeBound(outframe[0]);
+	m_frame[1] = RangeBound(outframe[1]);
 
 	m_queue_0[m_wrloc] = m_frame[0];
 	m_queue_1[m_wrloc] = m_frame[1];

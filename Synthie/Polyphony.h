@@ -7,6 +7,7 @@
  */
 
 #pragma once
+#include <vector>
 #include "Subtractive.h"
 
 /**
@@ -24,5 +25,13 @@ public:
 	void operator=(const CPolyphony &) = delete;
 
 	virtual ~CPolyphony();
+
+	virtual void Start() override;
+	virtual bool Generate() override;
+
+	void AddFreq(double f) { m_freqs.push_back(f); }
+
+private:
+	std::vector<double> m_freqs;
 };
 
