@@ -2,16 +2,18 @@
 #include "Wavetable.h"
 #include "Notes.h"
 #include "audio/DirSoundSource.h"
-
+#include <string>
 CWavetable::CWavetable()
 {
-	m_duration = 0.1;
+	m_duration = .5;
 }
 
 CWavetable::CWavetable(double bpm)
 {
-	m_duration = 0.1;
+	m_duration = .5;
 	m_bpm = bpm;
+	m_numsamples = 0;
+	m_samples = NULL;
 }
 
 CWavetable::~CWavetable()
@@ -20,36 +22,19 @@ CWavetable::~CWavetable()
 
 void CWavetable::Start()
 {
-	m_ar.SetSource(&m_sinewave);
-	m_ar.SetSampleRate(GetSampleRate());
-	m_ar.Start();
+	//m_position = 0;
+	//m_ar.SetSource(&m_sinewave);
+	m_wavePlayer.SetSampleRate(GetSampleRate());
+	m_wavePlayer.Start();
 }
 
 bool CWavetable::Generate()
 {
-	/*	// Tell the component to generate an audio sample
-	m_sinewave.Generate();
+	bool valid = m_wavePlayer.Generate();
 
-	// Read the component's sample and make it our resulting frame.
-	m_frame[0] = m_sinewave.Frame(0);
-	m_frame[1] = m_sinewave.Frame(1);
-
-	// Update time
-	m_time += GetSamplePeriod();
-
-	// We return true until the time reaches the duration.
-	return m_time < m_duration; */
-
-	// Tell the component to generate an audio 
-	bool valid = m_ar.Generate();
-	// Read the component's sample and make it our resulting frame.
-	m_frame[0] = m_ar.Frame(0);
-	m_frame[1] = m_ar.Frame(1);
-
-	// Update time
-	m_time += GetSamplePeriod();
-
-	// We return true until the time reaches the duration returned by the AR object.
+	m_frame[0] = m_wavePlayer.Frame(0);
+	m_frame[1] = m_wavePlayer.Frame(1);
+	
 	return valid;
 }
 
@@ -111,7 +96,7 @@ void CWavetable::SetNote(CNote *note)
 		if (name == "duration")
 		{
 			value.ChangeType(VT_R8);
-			// SetDuration(value.dblVal); // play the note for the duration in terms of seconds
+			SetDuration(value.dblVal); // play the note for the duration in terms of seconds
 			m_ar.SetDuration(value.dblVal * (NUM_SECS_IN_MINUTE / m_bpm));
 
 		}
@@ -119,6 +104,16 @@ void CWavetable::SetNote(CNote *note)
 		{
 			SetFreq(NoteToFrequency(value.bstrVal));
 			//set something at note
+			value.ChangeType(VT_I4);
+			m_notevalue = value.intVal;
+			
 		}
 	}
+}
+CWaveInstrument *CWavetable::CreateInstrument()
+{
+	CWaveInstrument *instrument = new CWaveInstrument();
+	instrument->GetPlayer()->SetSamples(&m_sounds[m_notevalue][0], (int)m_sounds[m_notevalue].size());
+
+	return instrument;
 }

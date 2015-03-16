@@ -1,6 +1,8 @@
 #pragma once
 #include "Instrument.h"
 #include "SineWave.h"
+#include "WaveInstrument.h"
+#include "WavePlayer.h"
 #include "AR.h"
 #include <vector>
 class CWavetable :
@@ -19,13 +21,18 @@ public:
 	void SetAmplitude(double a) { m_sinewave.SetAmplitude(a); }
 	void SetDuration(double d) { m_duration = d; }
 	bool LoadFile(const char *filename);
-
+	CWaveInstrument *CreateInstrument();
 	virtual void SetNote(CNote *note);
 private:
 	CSineWave   m_sinewave;
 	CAR m_ar;
+	CWavePlayer m_wavePlayer;
 	double m_duration;
 	double m_time;
+	int m_notevalue;
+	int m_position;
+	int    m_numsamples;
+	short *m_samples;
 	std::vector< std::vector<short> > m_sounds;
 	std::vector<short> m_wave;
 };

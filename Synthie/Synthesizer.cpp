@@ -22,7 +22,10 @@ CSynthesizer::CSynthesizer()
 	m_beatspermeasure = 4;
 	m_secperbeat = 0.5;   
 	m_waveinstfactory.LoadFile("drumriff.wav");
+	m_wavetable.LoadFile("swallow.wav");
 	m_wavetable.LoadFile("drumriff.wav");
+	m_wavetable.LoadFile("isis.wav");
+	m_wavetable.LoadFile("swallow.wav");
 }
 
 
@@ -147,6 +150,7 @@ bool CSynthesizer::Generate(double * frame)
 		else if (note->Instrument() == L"Wavetable")
 		{
 			m_wavetable.SetNote(note);
+			instrument = m_wavetable.CreateInstrument();
 		}
 
 		// Configure the instrument object
