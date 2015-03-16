@@ -12,16 +12,6 @@
 #define new DEBUG_NEW
 #endif
 
-short RangeBound(double d)
-{
-    if(d < -32768)
-        return -32768;
-    else if(d > 32767)
-        return 32767;
-
-    return (short)d;
-}
-
 // CSynthieView
 
 CSynthieView::CSynthieView()

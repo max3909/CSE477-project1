@@ -39,8 +39,14 @@
 
 const double PI = 3.1415926535897932384626433832795;
 
-
-
+inline short RangeBound(double d)
+{
+	if (d > 32767)
+		return 32767;
+	if (d < -32768)
+		return -32768;
+	return short(d);
+}
 
 
 

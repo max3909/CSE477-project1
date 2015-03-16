@@ -25,13 +25,13 @@ public:
 
 	virtual ~CReson();
 
-	virtual void Start() {}
-	virtual bool Generate() { return false; }
+	virtual void Start() override;
+	virtual bool Generate() override;
 
 private:
-	std::vector<short> m_queue_x;
-	std::vector<short> m_queue_y;
-	int m_wrloc = 0;
-	int m_rdloc = 0;
+	std::vector<short> m_queue_0;
+	std::vector<short> m_queue_1;
+	int m_wrloc;
+	int m_rdloc;
 };
 

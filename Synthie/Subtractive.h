@@ -39,4 +39,3 @@ protected:
 	double m_phase;
 	short m_wavetype;
 };
-
