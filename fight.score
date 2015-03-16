@@ -36,6 +36,15 @@
 </instrument>
      
 
+<instrument instrument = "Wavetable">
+<note measure="1" beat="1" duration="0.5" note="Bb4"/>
+  
+</instrument>
+
+<instrument instrument="Wave">
+<note measure="1" beat="1" duration="8" note="C4"/>
+</instrument>
+
 <instrument instrument = "Echo">
 	  
 <note measure="3" beat="1.25" wet="0.5" dry="0.25" delay="1.5"/>
