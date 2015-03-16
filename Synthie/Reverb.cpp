@@ -33,8 +33,8 @@ void CReverb::Process(double *frameIn, double *frameOut){
 		m_queue[m_wrloc + c] = frameIn[c];
 
 		// Add output of the queue to the current input
-		frameOut[c] = m_dry * frameIn[c];
-		frameOut[c + delaySamples] = m_wet * frameIn[c] * decay;
+		frameOut[c] = m_dry * frameIn[c] + m_wet * frameIn[c] * decay;
+		//frameOut[c + delaySamples] = m_wet * frameIn[c] * decay;
 	}
 
 	//int flange = 0.006 + sin(0.25 * 2 * M_PI * m_time) * 0.004;

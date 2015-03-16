@@ -2,11 +2,14 @@
 #include "Chorus.h"
 
 
+
 const int QSIZE = 200000;
 const double M_PI = 3.14159265359;
 
 CChorus::CChorus()
 {
+	m_sampleRate = 44100.;
+	m_samplePeriod = 1 / m_sampleRate;
 }
 
 
@@ -16,26 +19,36 @@ CChorus::~CChorus()
 
 void CChorus::Start()
 {
+	m_queue.resize(QSIZE);
+	m_wrloc = 0;
+	m_rdloc = 0;
+	log.open("log.txt");
 }
 
 bool CChorus::Generate(){
 	return true;
 }
 
-void CChorus::Process(double *frameIn, double *frameOut){
+void CChorus::Process(double *frameIn, double *frameOut, double time){
 	// Loop over the channels
 	for (int c = 0; c<2; c++)
 	{
 		m_queue[m_wrloc + c] = frameIn[c];
 
 		// Add output of the queue to the current input
-		frameOut[c] = m_dry * frameIn[c] + m_wet * m_queue[m_rdloc + c];
+		//log << m_rdloc << endl;
+		frameOut[c] = m_dry * frameIn[c] + m_wet * m_queue[(m_rdloc + c) % QSIZE];
 	}
 
-	int chorus = 0.025 + sin(0.25 * 2 * M_PI * m_time) * 0.005;
+	double chorus = 0.025 + sin(0.25 * 2 * M_PI * time) * 0.005;
+	
 	int delaylength = int((chorus*GetSampleRate() + 0.5) * 2);
+	
 	m_wrloc = (m_wrloc + 2) % QSIZE;
 	m_rdloc = (m_wrloc + QSIZE - delaylength) % QSIZE;
+	
+	//m_time += GetSamplePeriod();
+	//log.close();
 }
 
 void CChorus::SetNote(CNote *note){

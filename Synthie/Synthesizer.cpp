@@ -113,21 +113,26 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			m_chorus.SetNote(note);
 			send1 = true;
+			m_chorus.Start();
+			
 		}
 		else if (note->Instrument() == L"Flange")
 		{
 			m_flange.SetNote(note);
 			send2 = true;
+			m_flange.Start();
 		}
 		else if (note->Instrument() == L"NoiseGate")
 		{
 			m_noiseGate.SetNote(note);
 			send3 = true;
+			m_noiseGate.Start();
 		}
 		else if (note->Instrument() == L"Reverb")
 		{
 			m_reverb.SetNote(note);
 			send4 = true;
+			m_reverb.Start();
 		}
 
 		// Configure the instrument object
@@ -247,7 +252,7 @@ bool CSynthesizer::Generate(double * frame)
 		}
 
 		if (channelframes[1][0] != 0){
-			m_chorus.Process(channelframes[1], cframes);
+			m_chorus.Process(channelframes[1], cframes, m_time);
 		}
 		if (channelframes[2][0] != 0){
 			m_flange.Process(channelframes[2], fframes);

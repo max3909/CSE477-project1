@@ -28,10 +28,10 @@ void CFlange::Process(double *frameIn, double *frameOut){
 		m_queue[m_wrloc + c] = frameIn[c];
 
 		// Add output of the queue to the current input
-		frameOut[c] = m_dry * frameIn[c] + m_wet * m_queue[m_rdloc + c];
+		frameOut[c] = m_dry * frameIn[c] + m_wet * m_queue[(m_rdloc + c) % QSIZE];
 	}
 
-	int flange = 0.006 + sin(0.25 * 2 * M_PI * m_time) * 0.004;
+	double flange = 0.006 + sin(0.25 * 2 * M_PI * m_time) * 0.004;
 	int delaylength = int((flange*GetSampleRate() + 0.5) * 2);
 	m_wrloc = (m_wrloc + 2) % QSIZE;
 	m_rdloc = (m_wrloc + QSIZE - delaylength) % QSIZE;
