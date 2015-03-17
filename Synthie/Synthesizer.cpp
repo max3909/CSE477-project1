@@ -48,6 +48,7 @@ void CSynthesizer::Start()
 	m_measure = 0;
 	m_beat = 0;
 	m_time = 0;
+	effectsOn = false;
 }
 
 
@@ -207,15 +208,19 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			if (send1){
 				instrument->setSend(1, send1value);
+				effectsOn = true;
 			}
 			if (send2){
 				instrument->setSend(2, send2value);
+				effectsOn = true;
 			}
 			if (send3){
 				instrument->setSend(3, send3value);
+				effectsOn = true;
 			}
 			if (send4){
 				instrument->setSend(4, send4value);
+				effectsOn = true;
 			}
 			/*for (int c = 0; c<GetNumChannels(); c++)
 			{
@@ -283,11 +288,16 @@ bool CSynthesizer::Generate(double * frame)
 		}
 		
 		for (int c = 0; c < GetNumChannels(); c++){
-			//frame[c] += frames[c];
-			frame[c] += cframes[c];
-			frame[c] += fframes[c];
-			frame[c] += nframes[c];
-			frame[c] += rframes[c];
+			if (effectsOn == false){
+				frame[c] += frames[c];
+			}
+			else{
+				frame[c] += cframes[c];
+				frame[c] += fframes[c];
+				frame[c] += nframes[c];
+				frame[c] += rframes[c];
+			}
+			
 		}
 		
 

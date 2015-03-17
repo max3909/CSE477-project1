@@ -67,6 +67,8 @@ private:
 	CRingMod m_ringmod;
 	CWavetable m_wavetable;
 
+	bool effectsOn;
+
 
 public:
 	void Start();
