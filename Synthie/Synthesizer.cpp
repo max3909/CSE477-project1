@@ -26,6 +26,17 @@ CSynthesizer::CSynthesizer()
 	m_wavetable.LoadFile("drumriff.wav");
 	m_wavetable.LoadFile("isis.wav");
 	m_wavetable.LoadFile("rabass5.wav");
+
+	m_drumtable.LoadFile("bass drum.wav");
+	m_drumtable.LoadFile("bass drum 2.wav");
+	m_drumtable.LoadFile("cymbal.wav");
+	m_drumtable.LoadFile("cymbal 2.wav");
+	m_drumtable.LoadFile("cymbal 3.wav");
+	m_drumtable.LoadFile("cowbell.wav");
+	m_drumtable.LoadFile("tom.wav");
+	m_drumtable.LoadFile("tom 2.wav");
+	m_drumtable.LoadFile("tom 3.wav");
+
 }
 
 
@@ -152,6 +163,11 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			m_wavetable.SetNote(note);
 			instrument = m_wavetable.CreateInstrument();
+		}
+		else if (note->Instrument() == L"Drum")
+		{
+			m_drumtable.SetNote(note);
+			instrument = m_drumtable.CreateInstrument();
 		}
 
 		// Configure the instrument object

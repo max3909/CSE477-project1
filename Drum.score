@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<score bpm="240" beatspermeasure="2">
+    
+<instrument instrument = "Drum">
+<note measure="2" beat="1" duration="1" note="tom"/>
+<note measure="2" beat="2" duration="1" note="tom 2"/>
+<note measure="2" beat="3" duration="2" note="bass drum 2"/>
+<note measure="4" beat="1" duration="2" note="cymbal 2"/>
+</instrument>
+
+</score>
+

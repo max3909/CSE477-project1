@@ -13,6 +13,7 @@ using namespace std;
 #include "NoiseGate.h"
 #include "Reverb.h"
 #include "Wavetable.h"
+#include "DrumWaveTable.h"
 #include "RingMod.h"
 
 class CSynthesizer
@@ -66,6 +67,7 @@ private:
 	CReverb m_reverb;
 	CRingMod m_ringmod;
 	CWavetable m_wavetable;
+	CDrumWaveTable m_drumtable;
 
 	bool effectsOn;
 

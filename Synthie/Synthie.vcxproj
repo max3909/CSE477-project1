@@ -132,6 +132,7 @@
     <ClCompile Include="audio\DirSoundSource.cpp" />
     <ClCompile Include="audio\DirSoundStream.cpp" />
     <ClCompile Include="Chorus.cpp" />
+    <ClCompile Include="DrumWaveTable.cpp" />
     <ClCompile Include="Echo.cpp" />
     <ClCompile Include="Envelope.cpp" />
     <ClCompile Include="Flange.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="audio\DirSoundSource.h" />
     <ClInclude Include="audio\DirSoundStream.h" />
     <ClInclude Include="Chorus.h" />
+    <ClInclude Include="DrumWaveTable.h" />
     <ClInclude Include="Echo.h" />
     <ClInclude Include="Envelope.h" />
     <ClInclude Include="Flange.h" />
