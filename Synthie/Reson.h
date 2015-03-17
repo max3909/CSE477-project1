@@ -8,6 +8,7 @@
 
 #pragma once
 #include "Subtractive.h"
+#include "Note.h"
 
 /**
  * \brief reson filter
@@ -27,6 +28,8 @@ public:
 
 	virtual void Start() override;
 	virtual bool Generate() override;
+
+	void SetNote(CNote *note);
 
 private:
 	std::vector<short> m_queue_0;

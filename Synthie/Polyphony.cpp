@@ -26,7 +26,7 @@ void CPolyphony::Start()
 bool CPolyphony::Generate()
 {
 	long outframe[2];
-	for (auto note : m_freqs)
+	for (double note : m_freqs)
 	{
 		m_freq = note;
 		switch (m_wavetype)
@@ -44,7 +44,7 @@ bool CPolyphony::Generate()
 		outframe[1] = m_frame[1] / m_freqs.size();
 	}
 	
-	m_phase += 2 * PI * m_freq * GetSamplePeriod();
+	m_phase += 2 * PI * GetSamplePeriod();
 	
 	m_frame[0] = RangeBound(outframe[0]);
 	m_frame[1] = RangeBound(outframe[1]);

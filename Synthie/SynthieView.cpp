@@ -256,63 +256,63 @@ void CSynthieView::OnFileOpenscore()
 
 void CSynthieView::OnSubtractiveSquare()
 {
-	CSubtractive sub;
+	//CSubtractive sub;
 
-	// Call to open the generator output
-	if (!GenerateBegin())
-		return;
+	//// Call to open the generator output
+	//if (!GenerateBegin())
+	//	return;
 
-	short audio[2];
+	//short audio[2];
 
-	double freq = 1000;
-	double duration = 5;
+	//double freq = 1000;
+	//double duration = 5;
 
-	for (double time = 0.; time < duration; time += 1. / SampleRate())
-	{
-		//sub.SquareWave(time);
-		audio[0] = sub.Frame(0);
-		audio[1] = audio[0];
+	//for (double time = 0.; time < duration; time += 1. / SampleRate())
+	//{
+	//	//sub.SquareWave(time);
+	//	audio[0] = sub.Frame(0);
+	//	audio[1] = audio[0];
 
-		GenerateWriteFrame(audio);
+	//	GenerateWriteFrame(audio);
 
-		// The progress control
-		if (ProgressAbortCheck())
-			break;
-	}
+	//	// The progress control
+	//	if (ProgressAbortCheck())
+	//		break;
+	//}
 
 
-	// Call to close the generator output
-	GenerateEnd();
+	//// Call to close the generator output
+	//GenerateEnd();
 }
 
 
 void CSynthieView::OnSubtractiveSawtooth()
 {
-	CSubtractive sub;
+	//CSubtractive sub;
 
-	// Call to open the generator output
-	if (!GenerateBegin())
-		return;
+	//// Call to open the generator output
+	//if (!GenerateBegin())
+	//	return;
 
-	short audio[2];
+	//short audio[2];
 
-	double freq = 1000;
-	double duration = 5;
+	//double freq = 1000;
+	//double duration = 5;
 
-	for (double time = 0.; time < duration; time += 1. / SampleRate())
-	{
-		//sub.SawtoothWave(time);
-		audio[0] = sub.Frame(0);
-		audio[1] = audio[0];
+	//for (double time = 0.; time < duration; time += 1. / SampleRate())
+	//{
+	//	//sub.SawtoothWave(time);
+	//	audio[0] = sub.Frame(0);
+	//	audio[1] = audio[0];
 
-		GenerateWriteFrame(audio);
+	//	GenerateWriteFrame(audio);
 
-		// The progress control
-		if (ProgressAbortCheck())
-			break;
-	}
+	//	// The progress control
+	//	if (ProgressAbortCheck())
+	//		break;
+	//}
 
 
-	// Call to close the generator output
-	GenerateEnd();
+	//// Call to close the generator output
+	//GenerateEnd();
 }

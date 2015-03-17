@@ -15,6 +15,7 @@ using namespace std;
 #include "Wavetable.h"
 #include "DrumWaveTable.h"
 #include "RingMod.h"
+#include "Reson.h"
 
 class CSynthesizer
 {
