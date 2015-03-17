@@ -27,11 +27,12 @@ private:
 	CSineWave   m_sinewave;
 	CAR m_ar;
 	CWavePlayer m_wavePlayer;
-	double m_duration;
-	double m_time;
-	int m_notevalue;
-	int    m_numsamples;
-	short *m_samples;
+	double	m_duration;
+	double	m_time;
+	int		m_notevalue;
+	int		m_numsamples;
+	short	*m_samples;
+	int		m_pitch;
 	std::vector< std::vector<short> > m_sounds;
 	std::vector<short> m_wave;
 };

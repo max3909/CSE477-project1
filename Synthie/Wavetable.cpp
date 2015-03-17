@@ -106,7 +106,13 @@ void CWavetable::SetNote(CNote *note)
 			//set something at note
 			value.ChangeType(VT_I4);
 			m_notevalue = value.intVal;
-			
+		}
+		else if (name == "pitch")
+		{
+			value.ChangeType(VT_I4);
+
+			m_pitch = value.intVal;
+
 		}
 	}
 }
@@ -115,6 +121,7 @@ CWaveInstrument *CWavetable::CreateInstrument()
 	CWaveInstrument *instrument = new CWaveInstrument();
 	instrument->GetPlayer()->SetSamples(&m_sounds[m_notevalue][0], (int)m_sounds[m_notevalue].size());
 	instrument->GetPlayer()->SetDuration(m_duration);
+	instrument->GetPlayer()->SetPitchFactor(m_pitch);
 
 	return instrument;
 }
