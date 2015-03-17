@@ -3,9 +3,9 @@
 <score bpm="120" beatspermeasure="2">
 
 <instrument instrument = "Polyphony">
-<note measure="1" beat="1" duration="3" notes="D3,F#3,A4"/>
-<note measure="4" beat="1" duration="1" notes="G3,B4,D4"/>
-<note measure="5" beat="1" duration="4" notes="E3,G#3,B4"/>
+<note measure="1" beat="1" duration="3" notes="D3,F#3,A4" wave="0"/>
+<note measure="4" beat="1" duration="1" notes="G3,B4,D4" wave="1"/>
+<note measure="5" beat="1" duration="4" notes="E3,G#3,B4" wave="0"/>
 </instrument>
 
 </score>

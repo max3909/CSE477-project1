@@ -92,5 +92,10 @@ void CReson::SetNote(CNote *note)
 		{
 			m_freq = (NoteToFrequency(value.bstrVal));
 		}
+		else if (name == "wave")
+		{
+			value.ChangeType(VT_INT);
+			m_wavetype = value.intVal;
+		}
 	}
 }

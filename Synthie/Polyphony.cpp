@@ -104,5 +104,10 @@ void CPolyphony::SetNote(CNote *note)
 				AddFreq(NoteToFrequency(ele.c_str()));
 			}
 		}
+		else if (name == "wave")
+		{
+			value.ChangeType(VT_INT);
+			m_wavetype = value.intVal;
+		}
 	}
 }
