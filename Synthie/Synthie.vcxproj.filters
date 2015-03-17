@@ -129,6 +129,9 @@
     <ClCompile Include="DrumWaveTable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SnareDrumInstrument.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio\DirSound.h">
@@ -252,6 +255,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DrumWaveTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SnareDrumInstrument.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
