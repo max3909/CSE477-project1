@@ -33,6 +33,8 @@ private:
 	int		m_numsamples;
 	short	*m_samples;
 	int		m_pitch;
+	double  m_loopstart;
+	double  m_loopend;
 	std::vector< std::vector<short> > m_sounds;
 	std::vector<short> m_wave;
 };

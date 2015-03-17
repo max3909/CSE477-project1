@@ -82,6 +82,11 @@ bool CWavePlayer::Generate()
 	}
 	else
 	{
+		if (m_position >= m_loopend * m_numsamples &&  m_time < m_duration && m_loopstart != m_loopend)
+		{
+			m_position = m_loopstart * m_numsamples;
+		}
+
 
 		if (m_position < m_numsamples && m_time < m_duration)
 		{
@@ -101,9 +106,6 @@ bool CWavePlayer::Generate()
 					m_time += GetSamplePeriod();
 				}
 			}
-			
-
-			
 			return true;
 		}
 		else

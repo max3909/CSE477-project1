@@ -112,7 +112,16 @@ void CWavetable::SetNote(CNote *note)
 			value.ChangeType(VT_I4);
 
 			m_pitch = value.intVal;
-
+		}
+		else if (name == "loops")
+		{
+			value.ChangeType(VT_R8);
+			m_loopstart = value.dblVal;
+		}
+		else if (name == "loope")
+		{
+			value.ChangeType(VT_R8);
+			m_loopend = value.dblVal;
 		}
 	}
 }
@@ -122,6 +131,7 @@ CWaveInstrument *CWavetable::CreateInstrument()
 	instrument->GetPlayer()->SetSamples(&m_sounds[m_notevalue][0], (int)m_sounds[m_notevalue].size());
 	instrument->GetPlayer()->SetDuration(m_duration);
 	instrument->GetPlayer()->SetPitchFactor(m_pitch);
+	instrument->GetPlayer()->SetLoopPoints(m_loopstart, m_loopend);
 
 	return instrument;
 }
