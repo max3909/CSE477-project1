@@ -18,6 +18,6 @@ private:
 	int    m_numsamples;
 	int    m_position;
 	double m_duration;
-
+	double m_time;
 };
 

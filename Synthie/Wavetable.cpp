@@ -95,7 +95,8 @@ void CWavetable::SetNote(CNote *note)
 		if (name == "duration")
 		{
 			value.ChangeType(VT_R8);
-			m_wavePlayer.SetDuration(value.dblVal); // play the note for the duration in terms of seconds
+			m_duration = value.dblVal;
+			//m_wavePlayer.SetDuration(value.dblVal); // play the note for the duration in terms of seconds
 			//m_ar.SetDuration(value.dblVal * (NUM_SECS_IN_MINUTE / m_bpm));
 
 		}
@@ -113,6 +114,7 @@ CWaveInstrument *CWavetable::CreateInstrument()
 {
 	CWaveInstrument *instrument = new CWaveInstrument();
 	instrument->GetPlayer()->SetSamples(&m_sounds[m_notevalue][0], (int)m_sounds[m_notevalue].size());
+	instrument->GetPlayer()->SetDuration(m_duration);
 
 	return instrument;
 }

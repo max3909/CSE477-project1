@@ -7,9 +7,9 @@
      
 
 <instrument instrument = "Wavetable">
-<note measure="3" beat="1" duration="5" note="2"/>
-<note measure="7" beat="1" duration="5" note="0"/>
-<note measure="2" beat="1" duration="5" note="1"/>
+<note measure="14" beat="1" duration="3" note="2"/>
+<note measure="6" beat="1" duration="8" note="0"/>
+<note measure="2" beat="1" duration="4" note="1"/>
 
 </instrument>
 
