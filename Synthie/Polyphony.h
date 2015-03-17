@@ -9,6 +9,7 @@
 #pragma once
 #include <vector>
 #include "Subtractive.h"
+#include "Note.h"
 
 /**
  * \brief plays more than one note at a time
@@ -30,6 +31,8 @@ public:
 	virtual bool Generate() override;
 
 	void AddFreq(double f) { m_freqs.push_back(f); }
+
+	void SetNote(CNote *note);
 
 private:
 	std::vector<double> m_freqs;

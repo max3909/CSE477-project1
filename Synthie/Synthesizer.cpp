@@ -3,6 +3,7 @@
 #include "Instrument.h"
 #include "ToneInstrument.h"
 #include "OddSinesInstrument.h"
+#include "Polyphony.h"
 #include "xmlhelp.h"
 #include <fstream>
 #include <vector>
@@ -173,6 +174,11 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			CReson * reson = new CReson();
 			instrument = reson;
+		}
+		else if (note->Instrument() == L"Polyphony")
+		{
+			CPolyphony * poly = new CPolyphony();
+			instrument = poly;
 		}
 
 		// Configure the instrument object
