@@ -15,6 +15,7 @@ using namespace std;
 #include "Wavetable.h"
 #include "RingMod.h"
 
+
 class CSynthesizer
 {
 public:
