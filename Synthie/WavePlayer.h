@@ -19,5 +19,7 @@ private:
 	int    m_position;
 	double m_duration;
 	double m_time;
+	double m_attack;
+	double m_release;
 };
 
