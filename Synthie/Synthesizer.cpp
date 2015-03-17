@@ -24,9 +24,16 @@ CSynthesizer::CSynthesizer()
 	m_secperbeat = 0.5;   
 	m_waveinstfactory.LoadFile("drumriff.wav");
 
-	m_wavetable.LoadFile("drumriff.wav");
-	m_wavetable.LoadFile("isis.wav");
-	m_wavetable.LoadFile("rabass5.wav");
+	m_wavetable.LoadFile("L1.wav");
+	m_wavetable.LoadFile("L2.wav");
+	m_wavetable.LoadFile("L3.wav");
+	m_wavetable.LoadFile("L4.wav");
+	m_wavetable.LoadFile("L5.wav");
+	m_wavetable.LoadFile("S1.wav");
+	m_wavetable.LoadFile("S2.wav");
+	m_wavetable.LoadFile("S3.wav");
+	m_wavetable.LoadFile("S4.wav");
+	m_wavetable.LoadFile("S5.wav");
 
 	m_drumtable.LoadFile("bass drum.wav");
 	m_drumtable.LoadFile("bass drum 2.wav");
