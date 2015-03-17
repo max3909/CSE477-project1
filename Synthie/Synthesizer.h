@@ -14,7 +14,7 @@ using namespace std;
 #include "Reverb.h"
 #include "Wavetable.h"
 #include "RingMod.h"
-
+#include "Reson.h"
 
 class CSynthesizer
 {

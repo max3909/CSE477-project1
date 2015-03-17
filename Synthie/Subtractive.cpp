@@ -15,6 +15,7 @@ CSubtractive::CSubtractive()
 {
 	m_freq = 500;
 	m_wavetype = 0;
+	m_duration = 0;
 }
 
 

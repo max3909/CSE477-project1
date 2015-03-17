@@ -32,6 +32,5 @@ private:
 	double m_attackend;
 	double m_delayend;
 	double m_releasestart;
-	double m_duration;
 };
 

@@ -14,7 +14,6 @@ CEnvelope::CEnvelope()
 	m_attackend = 0;
 	m_delayend = 0;
 	m_releasestart = 0;
-	m_duration = 0;
 }
 
 

@@ -15,7 +15,7 @@
  * \brief Subtractive synth class
  */
 class CSubtractive :
-	public CAudioNode
+	public CInstrument
 {
 public:
 	CSubtractive();
@@ -38,4 +38,5 @@ protected:
 	double m_freq; //< frequency of wave
 	double m_phase;
 	short m_wavetype;
+	double m_duration;
 };

@@ -153,6 +153,11 @@ bool CSynthesizer::Generate(double * frame)
 			m_wavetable.SetNote(note);
 			instrument = m_wavetable.CreateInstrument();
 		}
+		else if (note->Instrument() == L"Reson")
+		{
+			CReson * reson = new CReson();
+			instrument = reson;
+		}
 
 		// Configure the instrument object
 		if (instrument != NULL)
