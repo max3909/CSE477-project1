@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<score bpm="240" beatspermeasure="2">
+<score bpm="120" beatspermeasure="2">
     
 <instrument instrument = "Drum">
 <note measure="2" beat="1" duration="1" note="tom"/>
