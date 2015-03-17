@@ -26,12 +26,12 @@ CSubtractive::~CSubtractive()
 void CSubtractive::SquareWave()
 {
 	int num_harmonics = m_sampleRate / (2 * m_freq);
-	double sample = 0;
+	long sample = 0;
 	for (int i = 1; i < num_harmonics; i = i + 2)
 	{
 		sample = sample + 3200 * (1 / i) * sin(m_phase * (i * m_freq));
 	}
-	m_frame[0] = m_frame[1] = sample;
+	m_frame[0] = m_frame[1] = RangeBound(sample);
 }
 
 void CSubtractive::SawtoothWave()
@@ -42,7 +42,33 @@ void CSubtractive::SawtoothWave()
 	{
 		sample = sample + 3200 * (1 / i) * sin(m_phase * (i * m_freq));
 	}
-	m_frame[0] = m_frame[1] = sample;
+	m_frame[0] = m_frame[1] = RangeBound(sample);
+}
+
+void CSubtractive::TriangleWave()
+{
+	long sample = 0;
+	sample = sin(m_phase * m_freq);
+	
+	double time = m_phase / (2 * PI);
+	int nHarmonic = 1;
+	int nOtherHarmonic = 1;
+	int multiply = -1;
+
+	while (true)
+	{
+		nHarmonic++;
+		nOtherHarmonic = nHarmonic * multiply;
+		if ((nHarmonic % 2) == 0)
+			continue;
+		if ((nHarmonic * m_freq) > (m_sampleRate / 2))
+			break;
+
+		sample += short((3200 / (nOtherHarmonic*nOtherHarmonic)) * sin(2 * PI * m_freq * nOtherHarmonic * time)*time / m_duration);
+		multiply *= -1;
+	}
+
+	m_frame[0] = m_frame[1] = RangeBound(sample);
 }
 
 void CSubtractive::Start()
@@ -59,6 +85,9 @@ bool CSubtractive::Generate()
 		break;
 	case 1:
 		SawtoothWave();
+		break;
+	case 2:
+		TriangleWave();
 		break;
 	default:
 		break;

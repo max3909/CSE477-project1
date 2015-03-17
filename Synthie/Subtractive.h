@@ -31,6 +31,7 @@ public:
 
 	void SquareWave();
 	void SawtoothWave();
+	void TriangleWave();
 
 	void SetFrequency(double f) { m_freq = f; }
 

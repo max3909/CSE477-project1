@@ -39,6 +39,9 @@ bool CPolyphony::Generate()
 		case 1:
 			SawtoothWave();
 			break;
+		case 2:
+			TriangleWave();
+			break;
 		default:
 			break;
 		}
