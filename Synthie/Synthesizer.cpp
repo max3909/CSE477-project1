@@ -169,6 +169,11 @@ bool CSynthesizer::Generate(double * frame)
 			m_drumtable.SetNote(note);
 			instrument = m_drumtable.CreateInstrument();
 		}
+		else if (note->Instrument() == L"Reson")
+		{
+			CReson * reson = new CReson();
+			instrument = reson;
+		}
 
 		// Configure the instrument object
 		if (instrument != NULL)
