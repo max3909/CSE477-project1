@@ -6,7 +6,8 @@ const double M_PI = 3.14159265359;
 
 CNoiseGate::CNoiseGate()
 {
-	m_queue.resize(QSIZE);
+	m_range = 2.25;
+	m_threshold = -10;
 }
 
 
@@ -23,20 +24,19 @@ bool CNoiseGate::Generate(){
 }
 
 void CNoiseGate::Process(double *frameIn, double *frameOut, double time){
-	double sinewave = sin(250 * M_PI * time);
 	// Loop over the channels
 	for (int c = 0; c<2; c++)
 	{
 		//m_queue[m_wrloc + c] = frameIn[c];
-
+		if (AmpToDec(frameIn[c]) < m_threshold){
+			frameOut[c] = m_dry * frameIn[c] + m_wet * (frameIn[c] * m_range);
+		}
 		// Add output of the queue to the current input
-		frameOut[c] = m_dry* frameIn[c] + m_wet * ((sinewave * frameIn[c]));
-	}
+		else{
+			frameOut[c] = m_dry* frameIn[c];
+		}
 
-	/*int flange = 0.006 + sin(0.25 * 2 * M_PI * m_time) * 0.004;
-	int delaylength = int((flange*GetSampleRate() + 0.5) * 2);
-	m_wrloc = (m_wrloc + 2) % QSIZE;
-	m_rdloc = (m_wrloc + QSIZE - delaylength) % QSIZE;*/
+	}
 }
 
 void CNoiseGate::SetNote(CNote *note){
@@ -72,6 +72,10 @@ void CNoiseGate::SetNote(CNote *note){
 		else if (name == "threshold"){
 			value.ChangeType(VT_R8);
 			SetThreshold(value.dblVal);
+		}
+		else if (name == "range") {
+			value.ChangeType(VT_R8);
+			SetRange(value.dblVal);
 		}
 		else if (name == "send"){
 			value.ChangeType(VT_R8);

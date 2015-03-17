@@ -1,6 +1,10 @@
 #pragma once
 #include "Instrument.h"
 #include <vector>
+#include <cmath>
+
+using std::log10;
+
 class CNoiseGate :
 	public CInstrument
 {
@@ -16,8 +20,11 @@ public:
 	void SetWet(double w) { m_wet = w; }
 	void SetDelay(double dl) { m_delay = dl; }
 	void SetThreshold(double t) { m_threshold = t; }
+	void SetRange(double r) { m_range = r; }
 
 	void Process(double *frameIn, double *frameOut, double time);
+	double AmpToDec(double amp) { return 10 * log10(pow(amp, 2)); }
+	double DecToAmp(double dec) { return sqrt(pow(10, (dec / 10))); }
 
 private:
 	double  m_time;
@@ -25,8 +32,6 @@ private:
 	double m_wet;
 	double m_delay;
 	double m_threshold;
-	std::vector<short> m_queue;
-	int m_wrloc;
-	int m_rdloc;
+	double m_range;
 };
 
