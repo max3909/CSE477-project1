@@ -1,29 +1,28 @@
 #include "stdafx.h"
-#include "NoiseGate.h"
+#include "RingMod.h"
 
-const int QSIZE = 200000;
 const double M_PI = 3.14159265359;
 
-CNoiseGate::CNoiseGate()
+CRingMod::CRingMod()
 {
-	m_queue.resize(QSIZE);
+	m_sinFreq = 1;
 }
 
 
-CNoiseGate::~CNoiseGate()
+CRingMod::~CRingMod()
 {
 }
 
-void CNoiseGate::Start()
+void CRingMod::Start()
 {
 }
 
-bool CNoiseGate::Generate(){
+bool CRingMod::Generate(){
 	return true;
 }
 
-void CNoiseGate::Process(double *frameIn, double *frameOut, double time){
-	double sinewave = sin(250 * M_PI * time);
+void CRingMod::Process(double *frameIn, double *frameOut, double time){
+	double sinewave = sin(m_sinFreq * 2 * M_PI * time);
 	// Loop over the channels
 	for (int c = 0; c<2; c++)
 	{
@@ -39,7 +38,7 @@ void CNoiseGate::Process(double *frameIn, double *frameOut, double time){
 	m_rdloc = (m_wrloc + QSIZE - delaylength) % QSIZE;*/
 }
 
-void CNoiseGate::SetNote(CNote *note){
+void CRingMod::SetNote(CNote *note){
 	// Get a list of all attribute nodes and the
 	// length of that list
 	CComPtr<IXMLDOMNamedNodeMap> attributes;
@@ -69,9 +68,9 @@ void CNoiseGate::SetNote(CNote *note){
 			value.ChangeType(VT_R8);
 			SetDry(value.dblVal);
 		}
-		else if (name == "threshold"){
+		else if (name == "frequency"){
 			value.ChangeType(VT_R8);
-			SetThreshold(value.dblVal);
+			SetSineFreq(value.dblVal);
 		}
 		else if (name == "send"){
 			value.ChangeType(VT_R8);

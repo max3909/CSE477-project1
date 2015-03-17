@@ -13,6 +13,7 @@ using namespace std;
 #include "NoiseGate.h"
 #include "Reverb.h"
 #include "Wavetable.h"
+#include "RingMod.h"
 
 class CSynthesizer
 {
@@ -63,6 +64,7 @@ private:
 	CNoiseGate m_noiseGate;
 	CFlange m_flange;
 	CReverb m_reverb;
+	CRingMod m_ringmod;
 	CWavetable m_wavetable;
 
 

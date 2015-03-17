@@ -140,12 +140,12 @@ bool CSynthesizer::Generate(double * frame)
 			m_noiseGate.Start();
 			send3value = m_noiseGate.GetSend();
 		}
-		else if (note->Instrument() == L"Reverb")
+		else if (note->Instrument() == L"RingMod")
 		{
-			m_reverb.SetNote(note);
+			m_ringmod.SetNote(note);
 			send4 = true;
-			m_reverb.Start();
-			send4value = m_reverb.GetSend();
+			m_ringmod.Start();
+			send4value = m_ringmod.GetSend();
 		}
 		else if (note->Instrument() == L"Wavetable")
 		{
@@ -276,10 +276,10 @@ bool CSynthesizer::Generate(double * frame)
 			m_flange.Process(channelframes[2], fframes, m_time);
 		}
 		if (channelframes[3][0] != 0){
-			m_noiseGate.Process(channelframes[3], nframes);
+			m_noiseGate.Process(channelframes[3], nframes, m_time);
 		}
 		if (channelframes[4][0] != 0){
-			m_reverb.Process(channelframes[4], rframes);
+			m_ringmod.Process(channelframes[4], rframes, m_time);
 		}
 		
 		for (int c = 0; c < GetNumChannels(); c++){

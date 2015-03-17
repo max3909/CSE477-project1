@@ -147,6 +147,7 @@
     <ClCompile Include="ProgressDlg.cpp" />
     <ClCompile Include="Reson.cpp" />
     <ClCompile Include="Reverb.cpp" />
+    <ClCompile Include="RingMod.cpp" />
     <ClCompile Include="SineWave.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -188,6 +189,7 @@
     <ClInclude Include="Reson.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Reverb.h" />
+    <ClInclude Include="RingMod.h" />
     <ClInclude Include="SineWave.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Subtractive.h" />
