@@ -3,15 +3,7 @@
 <score bpm="120" beatspermeasure="2">
 
 <instrument instrument = "Envelope">
-<note measure="11" beat="1" duration="3" note="D3" wave="2" attack="0.1" delay="0.05" release="1"/>
-<note measure="14" beat="1" duration="1" note="G4" wave="1" attack="0.3" delay="0.1"/>
-<note measure="15" beat="1" duration="4" note="E3" wave="0" attack="0.2" delay="0.15" release="3"/>
-</instrument>
-
-<instrument instrument = "Polyphony">
-<note measure="11" beat="1" duration="3" notes="D3,F#3,A4" wave="2"/>
-<note measure="14" beat="1" duration="1" notes="G3,B4,D4" wave="1"/>
-<note measure="15" beat="1" duration="4" notes="E3,G#3,B4" wave="0"/>
+<note measure="1" beat="1" duration="8" note="G4" wave="1" attack="2" delay="1" release="4"/>
 </instrument>
 
 </score>

@@ -13,7 +13,7 @@
 CEnvelope::CEnvelope()
 {
 	m_attackend = 0;
-	m_delayend = 0;
+	m_delayend = 0.001;
 	m_releaselen = 0.05;
 }
 
@@ -32,21 +32,25 @@ bool CEnvelope::Generate()
 	CSubtractive::Generate();
 
 	double time = m_phase / (2 * PI);
+	double value;
 
-	if (time >= m_duration - m_releaselen)
+	if (time >= (m_duration - m_releaselen))
 	{
-		m_frame[0] *= (time - m_releaselen) / (m_releaselen);
-		m_frame[1] *= (time - m_releaselen) / (m_releaselen);
+		value = (-(time - (m_duration - m_releaselen)) / (m_releaselen)) + 1;
+		m_frame[0] *= value;
+		m_frame[1] *= value;
 	}
 	else if (time > m_attackend && time < m_delayend)
 	{
-		m_frame[0] *= PEAK * (time - m_attackend) / (m_delayend - m_attackend);
-		m_frame[1] *= PEAK * (time - m_attackend) / (m_delayend - m_attackend);
+		value = PEAK * ((-(time - m_attackend) / (m_delayend - m_attackend)) + 1);
+		m_frame[0] *= value;
+		m_frame[1] *= value;
 	}
 	else if (time < m_attackend)
 	{
-		m_frame[0] *= PEAK * (time) / (m_attackend);
-		m_frame[1] *= PEAK * (time) / (m_attackend);
+		value = PEAK * (time) / (m_attackend);
+		m_frame[0] *= value;
+		m_frame[1] *= value;
 	}
 
 	return !(time >= m_duration);

@@ -4,6 +4,7 @@
 #include "ToneInstrument.h"
 #include "OddSinesInstrument.h"
 #include "Polyphony.h"
+#include "Envelope.h"
 #include "xmlhelp.h"
 #include <fstream>
 #include <vector>
@@ -191,6 +192,11 @@ bool CSynthesizer::Generate(double * frame)
 		{
 			CSnareDrumInstrument * snare = new CSnareDrumInstrument();
 			instrument = snare;
+		}
+		else if (note->Instrument() == L"Envelope")
+		{
+			CEnvelope * env = new CEnvelope();
+			instrument = env;
 		}
 
 		// Configure the instrument object
