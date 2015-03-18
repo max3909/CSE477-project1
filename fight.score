@@ -4,19 +4,13 @@
      
 
 <instrument instrument = "Wavetable">
-<note measure="14" beat="1" duration="3" note="2" pitch="1" loops="0" loope="0"/>
-<note measure="6" beat="1" duration="8" note="0" pitch="1" loops="0" loope="0"/>
-<note measure="16.7" beat="1" duration="20" note="0" pitch="1" loops=".4" loope=".5"/>
-<note measure="2" beat="1" duration="4.5" note="1" pitch="1" loops="0" loope="0"/>
+
+<note measure="2" beat="1" duration="4.5" note="2" pitch="1" loops="0.5" loope="0.9"/>
 
 </instrument>
 
 
 
-<instrument instrument = "Echo">
-	  
-<note measure="3" beat="1.25" wet="0.5" dry="0.25" delay="1.5"/>
-     
-</instrument>
+
 </score>
 
