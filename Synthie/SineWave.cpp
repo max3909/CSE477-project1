@@ -17,7 +17,7 @@ CSineWave::~CSineWave()
 void CSineWave::Start()
 {
 	m_phase = 0;
-	m_freq = 200;
+	//m_freq = 200;
 }
 
 bool CSineWave::Generate()
