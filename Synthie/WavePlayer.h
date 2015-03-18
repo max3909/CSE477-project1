@@ -13,6 +13,8 @@ public:
 	void SetDuration(double d) { m_duration = d; }
 	void SetSamples(short *s, int n) { m_samples = s; m_numsamples = n; }
 	void SetPitchFactor(int f) { m_pitchfactor = f; }
+	void SetLoopPoints(double s, double e) { m_loopstart = s; m_loopend = e; }
+
 	void UpdatePos();
 
 private:
@@ -20,6 +22,8 @@ private:
 	int    m_numsamples;
 	int    m_position;
 	int	   m_pitchfactor;
+	double m_loopstart;
+	double m_loopend;
 	double m_duration;
 	double m_time;
 	double m_attack;
