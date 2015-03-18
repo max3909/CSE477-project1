@@ -6,7 +6,8 @@ CSineWave::CSineWave()
 {
 	m_phase = 0;
 	m_amp = 0.1;
-	m_freq = 440;
+	m_freq = 200;
+	m_freq_scale = 150;
 }
 
 
@@ -17,6 +18,7 @@ CSineWave::~CSineWave()
 void CSineWave::Start()
 {
 	m_phase = 0;
+	m_freq = 200;
 }
 
 bool CSineWave::Generate()
@@ -25,6 +27,7 @@ bool CSineWave::Generate()
 	m_frame[1] = m_frame[0];
 
 	m_phase += m_freq * GetSamplePeriod();
+	m_freq -= m_freq_scale * GetSamplePeriod();
 
 	return true;
 }

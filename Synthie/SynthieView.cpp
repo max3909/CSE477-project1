@@ -316,3 +316,4 @@ void CSynthieView::OnSubtractiveSawtooth()
 	//// Call to close the generator output
 	//GenerateEnd();
 }
+

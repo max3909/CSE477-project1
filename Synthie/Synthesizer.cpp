@@ -180,6 +180,11 @@ bool CSynthesizer::Generate(double * frame)
 			CPolyphony * poly = new CPolyphony();
 			instrument = poly;
 		}
+		else if (note->Instrument() == L"Snare")
+		{
+			CSnareDrumInstrument * snare = new CSnareDrumInstrument();
+			instrument = snare;
+		}
 
 		// Configure the instrument object
 		if (instrument != NULL)

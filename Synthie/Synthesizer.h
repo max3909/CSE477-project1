@@ -16,6 +16,7 @@ using namespace std;
 #include "DrumWaveTable.h"
 #include "RingMod.h"
 #include "Reson.h"
+#include "SnareDrumInstrument.h"
 
 class CSynthesizer
 {
@@ -46,6 +47,7 @@ public:
 	void XmlLoadScore(IXMLDOMNode * xml);
 	void XmlLoadInstrument(IXMLDOMNode * xml);
 	void XmlLoadNote(IXMLDOMNode * xml, std::wstring & instrument);
+	void PlaySnare();
 private:
 	int		m_channels;
 	double	m_sampleRate;
@@ -69,6 +71,7 @@ private:
 	CRingMod m_ringmod;
 	CWavetable m_wavetable;
 	CDrumWaveTable m_drumtable;
+	CSnareDrumInstrument m_snare;
 
 	bool effectsOn;
 

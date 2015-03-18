@@ -23,5 +23,6 @@ private:
 	double m_freq;
 	double m_amp;
 	double m_phase;
+	double m_freq_scale;
 };
 
