@@ -28,9 +28,12 @@ public:
 	virtual void Start() override;
 	virtual bool Generate() override;
 
+
+	void SetNote(CNote *note);
+
 private:
 	double m_attackend;
 	double m_delayend;
-	double m_releasestart;
+	double m_releaselen;
 };
 
