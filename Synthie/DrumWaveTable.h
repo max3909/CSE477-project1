@@ -36,4 +36,6 @@ private:
 	std::vector< std::vector<short> > m_sounds;
 	std::vector< std::string > m_sound_names;
 	std::vector<short> m_wave;
+	int		m_pitch;
+
 };

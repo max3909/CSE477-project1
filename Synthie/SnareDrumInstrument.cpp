@@ -9,6 +9,7 @@ CSnareDrumInstrument::CSnareDrumInstrument()
 	m_duration = 0.1;
 	m_rdloc = 0;
 	m_wrloc = 0;
+	m_time = 0;
 }
 
 // Constructor to set the beats per minute
@@ -32,6 +33,7 @@ void CSnareDrumInstrument::Start()
 	m_ar.SetSource(&m_sinewave);
 	m_ar.SetSampleRate(GetSampleRate());
 	m_ar.Start();
+	m_ar.m_duration = 0.2;
 	m_queue_0.clear();
 	m_queue_1.clear();
 
@@ -63,7 +65,7 @@ bool CSnareDrumInstrument::Generate()
 	// Update time
 	m_time += GetSamplePeriod();
 
-	double const GAIN = 10;
+	double const GAIN = 10000000;
 	double R = 1 - 0.01 / 2;
 	double costheta = (2 * R * cos(2 * PI * 0.02)) / (1 + pow(R, 2));
 	double sintheta = sqrt(1 - pow(costheta, 2));
@@ -76,8 +78,15 @@ bool CSnareDrumInstrument::Generate()
 	outframe[0] = A * m_frame[0] + (2 * R * costheta) * m_queue_0[(m_wrloc + QUEUESIZE - 1) % QUEUESIZE] - R * R * m_queue_0[(m_wrloc + QUEUESIZE - 2) % QUEUESIZE];
 	outframe[1] = A * m_frame[1] + (2 * R * costheta) * m_queue_1[(m_wrloc + QUEUESIZE - 1) % QUEUESIZE] - R * R * m_queue_1[(m_wrloc + QUEUESIZE - 2) % QUEUESIZE];
 
+	
+
 	m_frame[0] = RangeBound(outframe[0]);
 	m_frame[1] = RangeBound(outframe[1]);
+
+	if (outframe[0] != 0)
+	{
+		m_frame[0] = m_frame[0];
+	}
 
 	m_queue_0[m_wrloc] = m_frame[0];
 	m_queue_1[m_wrloc] = m_frame[1];
