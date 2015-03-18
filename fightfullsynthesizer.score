@@ -113,6 +113,83 @@
 
 </instrument>
 
+<instrument instrument = "Drum">
+
+<note measure="1" beat="1" duration="1" note="bass drum" pitch="1"/>
+<note measure="1" beat="3" duration="1" note="bass drum 2" pitch="1"/>
+
+<note measure="6" beat="1" duration="1" note="cowbell" pitch="1"/>
+<note measure="3" beat="1" duration="1" note="cowbell" pitch="1"/>
+<note measure="4" beat="1" duration="1" note="cowbell" pitch="1"/>
+<note measure="5" beat="1" duration="1" note="cowbell" pitch="1"/>
+
+
+<note measure="7" beat="1" duration="1" note="cymbal" pitch="1"/>
+<note measure="7" beat="3" duration="2" note="cymbal" pitch="1"/>
+<note measure="8" beat="1" duration="1" note="tom 3" pitch="1"/>
+<note measure="8" beat="3" duration="1" note="tom 2" pitch="1"/>
+<note measure="9" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="9" beat="2" duration="1" note="tom 3" pitch="1"/>
+
+<note measure="10" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="10" beat="2" duration="1" note="tom 3" pitch="1"/>
+
+<note measure="11" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="11" beat="2" duration="1" note="tom 3" pitch="1"/>
+<note measure="11" beat="3" duration="1" note="tom 2" pitch="1"/>
+
+<note measure="12" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="12" beat="2" duration="1" note="tom 3" pitch="1"/>
+<note measure="12" beat="3" duration="1" note="tom 2" pitch="1"/>
+<note measure="12" beat="4" duration="1" note="cymbal 3" pitch="1"/>
+
+<note measure="13" beat="4" duration="1" note="cymbal 2" pitch="1"/>
+
+
+<note measure="17" beat="1" duration="1" note="bass drum" pitch="1"/>
+<note measure="17" beat="3" duration="1" note="bass drum 2" pitch="1"/>
+
+<note measure="22" beat="1" duration="1" note="cowbell" pitch="1"/>
+<note measure="19" beat="1" duration="1" note="cowbell" pitch="1"/>
+<note measure="20" beat="1" duration="1" note="cowbell" pitch="1"/>
+<note measure="21" beat="1" duration="1" note="cowbell" pitch="1"/>
+
+
+<note measure="23" beat="1" duration="1" note="cymbal" pitch="1"/>
+<note measure="23" beat="3" duration="2" note="cymbal" pitch="1"/>
+<note measure="24" beat="1" duration="1" note="tom 3" pitch="1"/>
+<note measure="24" beat="3" duration="1" note="tom 2" pitch="1"/>
+<note measure="25" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="25" beat="2" duration="1" note="tom 3" pitch="1"/>
+
+<note measure="26" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="26" beat="2" duration="1" note="tom 3" pitch="1"/>
+
+<note measure="27" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="27" beat="2" duration="1" note="tom 3" pitch="1"/>
+<note measure="27" beat="3" duration="1" note="tom 2" pitch="1"/>
+
+<note measure="28" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="28" beat="2" duration="1" note="tom 3" pitch="1"/>
+<note measure="28" beat="3" duration="1" note="tom 2" pitch="1"/>
+<note measure="28" beat="4" duration="1" note="cymbal 3" pitch="1"/>
+
+<note measure="29" beat="4" duration="1" note="cymbal 2" pitch="1"/>
+
+
+</instrument>
+
+<instrument instrument = "Polyphony">
+<note measure="5" beat="1" duration="1" notes="D2,F#2,A3" wave="2"/>
+<note measure="6" beat="1" duration="1" notes="A3,C#3,E3" wave="1"/>
+<note measure="7" beat="1" duration="1" notes="F#2,A#3,C#3" wave="0"/>
+<note measure="8" beat="1" duration="1" notes="E2,G#2,B3" wave="0"/>
+<note measure="9" beat="1" duration="1" notes="D2,F#2,A3" wave="1"/>
+<note measure="10" beat="1" duration="1" notes="A3,C#3,E3" wave="1"/>
+<note measure="11" beat="1" duration="1" notes="F#2,A#3,C#3" wave="0"/>
+<note measure="12" beat="1" duration="1" notes="E2,G#2,B3" wave="0"/>
+</instrument>
+
 <instrument instrument = "Chorus">
 <note measure="1" beat="1" wet="0" dry="1.0" send="1.0"/>
   
@@ -134,35 +211,35 @@
 <note measure="6" beat="2" wet = "0" dry = "1.0" send = "1.0"/>
 <note measure="7" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
 
-<note measure="9" beat="1" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="9" beat="1" wet="1.0" dry="0.0" send="1.0"/>
           
-<note measure="10" beat="1" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="10" beat="1" wet="1.0" dry="0.0" send="1.0"/>
        
           
-<note measure="11" beat="1" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="11" beat="1" wet="1.0" dry="0.0" send="1.0"/>
           
-<note measure="11" beat="2" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="11" beat="2" wet="1.0" dry="0.0" send="1.0"/>
           
-<note measure="12" beat="1" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="12" beat="1" wet="1.0" dry="0.0" send="1.0"/>
 
           
-<note measure="13" beat="1" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="13" beat="1" wet="1.0" dry="0.0" send="1.0"/>
           
-<note measure="13" beat="1.5" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="13" beat="1.5" wet="1.0" dry="0.0" send="1.0"/>
           
-<note measure="13" beat="2" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="13" beat="2" wet="1.0" dry="0.0" send="1.0"/>
           
-<note measure="13" beat="2.5" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="13" beat="2.5" wet="1.0" dry="0.0" send="1.0"/>
 
           
-<note measure="14" beat="1" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="14" beat="1" wet="1.0" dry="0.0" send="1.0"/>
           
-<note measure="14" beat="2" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="14" beat="2" wet="1.0" dry="0.0" send="1.0"/>
        
           
-<note measure="15" beat="1" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="15" beat="1" wet="1.0" dry="0.0" send="1.0"/>
 
-<note measure="16" beat="1" wet="0.0" dry="1.0" send="1.0"/>
+<note measure="16" beat="1" wet="1.0" dry="0.0" send="1.0"/>
 
 
 <note measure="17" beat="1" send="0.0"/>
@@ -250,7 +327,8 @@
        
           
 <note measure="39" beat="1" send="0.0"/>
-     
+ 
+    
 </instrument>
 
 <instrument instrument = "Flange">
