@@ -63,35 +63,6 @@
 <note measure="30" beat="1" duration="3" note="Bb4"/>
 
 
-<note measure="46" beat="1" duration="0.5" note="Bb4"/>
-          
-<note measure="47" beat="1" duration="0.5" note="Bb4"/>
-       
-          
-<note measure="48" beat="1" duration="0.5" note="Bb4"/>
-          
-<note measure="48" beat="2" duration="0.5" note="Bb4"/>
-          
-<note measure="49" beat="1" duration="0.5" note="Bb4"/>
-
-          
-<note measure="50" beat="1" duration="0.5" note="G4"/>
-          
-<note measure="50" beat="1.5" duration="0.5" note="F#4"/>
-          
-<note measure="50" beat="2" duration="0.5" note="G4"/>
-          
-<note measure="50" beat="2.5" duration="0.5" note="G#4"/>
-
-          
-<note measure="51" beat="1" duration="1" note="A4"/>
-          
-<note measure="51" beat="2" duration="1" note="F4"/>
-       
-          
-<note measure="52" beat="1" duration="3" note="Bb4"/>
-
-
       
 </instrument>
      
@@ -180,14 +151,14 @@
 </instrument>
 
 <instrument instrument = "Polyphony">
-<note measure="5" beat="1" duration="1" notes="D2,F#2,A3" wave="2"/>
-<note measure="6" beat="1" duration="1" notes="A3,C#3,E3" wave="1"/>
-<note measure="7" beat="1" duration="1" notes="F#2,A#3,C#3" wave="0"/>
-<note measure="8" beat="1" duration="1" notes="E2,G#2,B3" wave="0"/>
-<note measure="9" beat="1" duration="1" notes="D2,F#2,A3" wave="1"/>
-<note measure="10" beat="1" duration="1" notes="A3,C#3,E3" wave="1"/>
-<note measure="11" beat="1" duration="1" notes="F#2,A#3,C#3" wave="0"/>
-<note measure="12" beat="1" duration="1" notes="E2,G#2,B3" wave="0"/>
+<note measure="50" beat="1" duration="1" notes="D2,F#2,A3" wave="2"/>
+<note measure="51" beat="1" duration="1" notes="A3,C#3,E3" wave="1"/>
+<note measure="52" beat="1" duration="1" notes="F#2,A#3,C#3" wave="0"/>
+<note measure="53" beat="1" duration="1" notes="E2,G#2,B3" wave="0"/>
+<note measure="54" beat="1" duration="1" notes="D2,F#2,A3" wave="1"/>
+<note measure="55" beat="1" duration="1" notes="A3,C#3,E3" wave="1"/>
+<note measure="56" beat="1" duration="1" notes="F#2,A#3,C#3" wave="0"/>
+<note measure="57" beat="1" duration="1" notes="E2,G#2,B3" wave="0"/>
 </instrument>
 
 <instrument instrument = "Chorus">
@@ -211,123 +182,116 @@
 <note measure="6" beat="2" wet = "0" dry = "1.0" send = "1.0"/>
 <note measure="7" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
 
-<note measure="9" beat="1" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="9" beat="1" wet="0.5" dry="0.5" send="1.0"/>
           
-<note measure="10" beat="1" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="10" beat="1" wet="0.4" dry="0.6" send="1.0"/>
        
           
-<note measure="11" beat="1" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="11" beat="1" wet="0.3" dry="0.7" send="1.0"/>
           
-<note measure="11" beat="2" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="11" beat="2" wet="0.2" dry="0.8" send="1.0"/>
           
-<note measure="12" beat="1" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="12" beat="1" wet="0.3" dry="0.7" send="1.0"/>
 
           
-<note measure="13" beat="1" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="13" beat="1" wet="0.4" dry="0.6" send="1.0"/>
           
-<note measure="13" beat="1.5" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="13" beat="1.5" wet="0.5" dry="0.5" send="1.0"/>
           
-<note measure="13" beat="2" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="13" beat="2" wet="0.0" dry="1.0" send="1.0"/>
           
-<note measure="13" beat="2.5" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="13" beat="2.5" wet="0.0" dry="1.0" send="1.0"/>
 
           
-<note measure="14" beat="1" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="14" beat="1" wet="0.0" dry="1.0" send="1.0"/>
           
-<note measure="14" beat="2" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="14" beat="2" wet="0.0" dry="1.0" send="1.0"/>
        
           
-<note measure="15" beat="1" wet="1.0" dry="0.0" send="1.0"/>
+<note measure="15" beat="1" wet="0.0" dry="1.0" send="1.0"/>
 
-<note measure="16" beat="1" wet="1.0" dry="0.0" send="1.0"/>
-
-
-<note measure="17" beat="1" send="0.0"/>
-          
-<note measure="18" beat="1" send="0.0"/>
-       
-          
-<note measure="19" beat="1" send="0.0"/>
-          
-<note measure="19" beat="2" send="0.0"/>
-          
-<note measure="20" beat="1" send="0.0"/>
-
-          
-<note measure="21" beat="1" send="0.0"/>
-          
-<note measure="21" beat="1.5" send="0.0"/>
-          
-<note measure="21" beat="2" send="0.0"/>
-          
-<note measure="21" beat="2.5" send="0.0"/>
-
-          
-<note measure="22" beat="1" send="0.0"/>
-          
-<note measure="22" beat="2" send="0.0"/>
-       
-          
-<note measure="23" beat="1" send="0.0"/>
+<note measure="16" beat="1" wet="0.0" dry="1.0" send="1.0"/>
 
 
-<note measure="25" beat="1" send="0.0"/>
+<note measure="17" beat="1" wet="0" dry="1.0" send="1.0"/>
+  
+<note measure="18" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="19" beat="1" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="26" beat="1" send="0.0"/>
-       
+<note measure="19" beat="2" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="27" beat="1" send="0.0"/>
+<note measure="20" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="21" beat="1" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="27" beat="2" send="0.0"/>
+<note measure="21" beat="1.5" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="28" beat="1" send="0.0"/>
+<note measure="21" beat="2" wet="0" dry="1.0" send="1.0"/>
+<note measure="21" beat="2.5" wet="0" dry ="1.0" send ="1.0"/>
+          
+<note measure="22" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
+          
+<note measure="22" beat="2" wet = "0" dry = "1.0" send = "1.0"/>
+<note measure="23" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
 
+<note measure="29" beat="1" wet="0" dry="1.0" send="1.0"/>
+  
+<note measure="30" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="31" beat="1" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="29" beat="1" send="0.0"/>
+<note measure="31" beat="2" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="29" beat="1.5" send="0.0"/>
+<note measure="32" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="33" beat="1" wet="0" dry="1.0" send="1.0"/>
+                 
+<note measure="34" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
           
-<note measure="29" beat="2" send="0.0"/>
-          
-<note measure="29" beat="2.5" send="0.0"/>
+<note measure="35" beat="2" wet = "0" dry = "1.0" send = "1.0"/>
+<note measure="36" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
 
-          
-<note measure="30" beat="1" send="0.0"/>
-          
-<note measure="30" beat="2" send="0.0"/>
-       
-          
-<note measure="31" beat="1" send="0.0"/>
- 
+<note measure="37" beat="1" wet="0" dry="1.0" send="1.0"/>
+  
+<note measure="38" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="39" beat="1" wet="0" dry="1.0" send="1.0"/>
+          
+<note measure="39" beat="2" wet="0" dry="1.0" send="1.0"/>
+          
+<note measure="40" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="41" beat="1" wet="0" dry="1.0" send="1.0"/>
+                 
+<note measure="42" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
+          
+<note measure="42" beat="2" wet = "0" dry = "1.0" send = "1.0"/>
+<note measure="43" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
 
-<note measure="33" beat="1" send="0.0"/>
+<note measure="44" beat="1" wet="0" dry="1.0" send="1.0"/>
+  
+<note measure="45" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="46" beat="1" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="34" beat="1" send="0.0"/>
-       
+<note measure="46" beat="2" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="35" beat="1" send="0.0"/>
+<note measure="47" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="48" beat="1" wet="0" dry="1.0" send="1.0"/>
+                 
+<note measure="49" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
           
-<note measure="35" beat="2" send="0.0"/>
-          
-<note measure="36" beat="1" send="0.0"/>
+<note measure="49" beat="2" wet = "0" dry = "1.0" send = "1.0"/>
+<note measure="50" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
 
+<note measure="51" beat="1" wet="0" dry="1.0" send="1.0"/>
+  
+<note measure="52" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="53" beat="1" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="37" beat="1" send="0.0"/>
+<note measure="53" beat="2" wet="0" dry="1.0" send="1.0"/>
           
-<note measure="37" beat="1.5" send="0.0"/>
+<note measure="54" beat="1" wet="0" dry="1.0" send="1.0"/>
+<note measure="55" beat="1" wet="0" dry="1.0" send="1.0"/>
+                 
+<note measure="56" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
           
-<note measure="37" beat="2" send="0.0"/>
-          
-<note measure="37" beat="2.5" send="0.0"/>
-
-          
-<note measure="38" beat="1" send="0.0"/>
-          
-<note measure="38" beat="2" send="0.0"/>
-       
-          
-<note measure="39" beat="1" send="0.0"/>
- 
+<note measure="56" beat="2" wet = "0" dry = "1.0" send = "1.0"/>
+<note measure="57" beat="1" wet = "0" dry = "1.0" send = "1.0"/>
     
 </instrument>
 
