@@ -157,6 +157,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Subtractive.cpp" />
+    <ClCompile Include="SweepSineWave.cpp" />
     <ClCompile Include="Synthesizer.cpp" />
     <ClCompile Include="Synthie.cpp" />
     <ClCompile Include="SynthieView.cpp" />
@@ -199,6 +200,7 @@
     <ClInclude Include="SnareDrumInstrument.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Subtractive.h" />
+    <ClInclude Include="SweepSineWave.h" />
     <ClInclude Include="Synthesizer.h" />
     <ClInclude Include="Synthie.h" />
     <ClInclude Include="SynthieView.h" />

@@ -1,15 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
-<score bpm="240" beatspermeasure="2">
+<score bpm="480" beatspermeasure="4">
     
 
 
 <instrument instrument = "Snare">
-<note measure="2" beat="1" duration="1" note="Eb4"/>
+<note measure="16" beat="1" duration="1" note="Bb4" pitch="1"/>
 </instrument>
 
 <instrument instrument = "Drum">
-<note measure="4" beat="1" duration="2" note="bass drum" pitch="1"/>
+<note measure="5" beat="1" duration="1" note="cowbell" pitch="1"/>
+<note measure="2" beat="1" duration="1" note="cowbell" pitch="1"/>
+<note measure="3" beat="1" duration="1" note="cowbell" pitch="1"/>
+<note measure="4" beat="1" duration="1" note="cowbell" pitch="1"/>
+
+
+<note measure="6" beat="1" duration="1" note="cymbal" pitch="1"/>
+<note measure="6" beat="3" duration="2" note="cymbal" pitch="1"/>
+<note measure="7" beat="1" duration="1" note="tom 3" pitch="1"/>
+<note measure="7" beat="3" duration="1" note="tom 2" pitch="1"/>
+<note measure="8" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="8" beat="2" duration="1" note="tom 3" pitch="1"/>
+
+<note measure="9" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="9" beat="2" duration="1" note="tom" pitch="1"/>
+
+<note measure="10" beat="1" duration="1" note="tom" pitch="1"/>
+<note measure="10" beat="2" duration="1" note="tom" pitch="1"/>
+<note measure="10" beat="3" duration="1" note="tom" pitch="1"/>
+<note measure="10" beat="4" duration="1" note="cymbal 3" pitch="1"/>
+
+
+
+
+
+
+
+
 </instrument>
 
 </score>

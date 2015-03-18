@@ -1,6 +1,6 @@
 #pragma once
 #include "Instrument.h"
-#include "SineWave.h"
+#include "SweepSineWave.h"
 #include "AR.h"
 #include <vector>
 
@@ -21,7 +21,7 @@ public:
 	void SetDuration(double d) { m_duration = d; }
 	virtual void SetNote(CNote *note);
 private:
-	CSineWave   m_sinewave;
+	CSweepSineWave m_sinewave;
 	CAR m_ar;
 	double m_duration;
 	double m_time;

@@ -1,11 +1,11 @@
 #pragma once
 #include "AudioNode.h"
-class CSineWave :
+class CSweepSineWave :
 	public CAudioNode
 {
 public:
-	CSineWave();
-	virtual ~CSineWave();
+	CSweepSineWave();
+	virtual ~CSweepSineWave();
 public:
 	//! Start audio generation
 	virtual void Start();
@@ -23,5 +23,5 @@ private:
 	double m_freq;
 	double m_amp;
 	double m_phase;
+	double m_freq_scale;
 };
-
