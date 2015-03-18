@@ -49,7 +49,7 @@ bool CSnareDrumInstrument::Generate()
 	// Tell the component to generate an audio sample
 	m_sinewave.Generate();
 
-	double f = -.12 + ((double)rand() / RAND_MAX) * (.24);
+	double f = -.05 + ((double)rand() / RAND_MAX) * (.1);
 
 	// Read the component's sample and make it our resulting frame.
 	m_frame[0] = m_sinewave.Frame(0) + f;
