@@ -64,7 +64,7 @@ void CSubtractive::TriangleWave()
 		if ((nHarmonic * m_freq) > (m_sampleRate / 2))
 			break;
 
-		sample += short((1600 / (nOtherHarmonic*nOtherHarmonic)) * sin(2 * PI * m_freq * nOtherHarmonic * time)*time / m_duration);
+		sample += RangeBound((1600 / (nOtherHarmonic*nOtherHarmonic)) * sin(2 * PI * m_freq * nOtherHarmonic * time)*time / m_duration);
 		multiply *= -1;
 	}
 
