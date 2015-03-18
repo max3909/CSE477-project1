@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<score bpm="120" beatspermeasure="2">
+     
+
+<instrument instrument = "Wavetable">
+
+<note measure="0" beat="1" duration="2" note="5" pitch="1" loops="1" loope="1"/>
+<note measure="2" beat="1" duration="10" note="7" pitch="0" loops="0.1" loope="0.9"/>
+<note measure="4" beat="1" duration="5" note="6" pitch="2" loops="0" loope="0"/>
+<note measure="6" beat="1" duration="5" note="9" pitch="0" loops="0" loope="0"/>
+<note measure="12" beat="1" duration="5" note="8" pitch="1" loops="0" loope="0"/>
+</instrument>
+
+
+
+
+</score>
+
