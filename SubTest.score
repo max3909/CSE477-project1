@@ -2,8 +2,30 @@
 
 <score bpm="120" beatspermeasure="2">
 
+<instrument instrument = "Polyphony">
+<note measure="5" beat="1" duration="1" notes="D2,F#2,A3" wave="2"/>
+<note measure="6" beat="1" duration="1" notes="A3,C#3,E3" wave="1"/>
+<note measure="7" beat="1" duration="1" notes="F#2,A#3,C#3" wave="0"/>
+<note measure="8" beat="1" duration="1" notes="E2,G#2,B3" wave="0"/>
+<note measure="9" beat="1" duration="1" notes="D2,F#2,A3" wave="1"/>
+<note measure="10" beat="1" duration="1" notes="A3,C#3,E3" wave="1"/>
+<note measure="11" beat="1" duration="1" notes="F#2,A#3,C#3" wave="0"/>
+<note measure="12" beat="1" duration="1" notes="E2,G#2,B3" wave="0"/>
+</instrument>
+
 <instrument instrument = "Envelope">
-<note measure="1" beat="1" duration="8" note="G4" wave="1" attack="2" delay="1" release="4"/>
+<note measure="25" beat="1.5" duration="1" note="D2" wave="1" attack="0.3" delay="0.05" release="0.03"/>
+<note measure="27" beat="1" duration="3.5" note="E2" wave="0" attack="0.2" delay="0.15" release="2"/>
+<note measure="1" beat="1" duration="0.5" note="C2" wave="0" attack="0.01" delay="0.05" release="0.001"/>
+<note measure="2" beat="2" duration="0.5" note="C2" wave="1" attack="0.01" delay="0.05" release="0.001"/>
+<note measure="4" beat="1" duration="0.5" note="C2" wave="1" attack="0.01" delay="0.05" release="0.001"/>
+</instrument>
+
+<instrument instrument = "Reson">
+<note measure="13" beat="1" duration="2.5" note="D2" wave="0"/>
+<note measure="16" beat="1" duration="2.5" note="D2" wave="1"/>
+<note measure="19" beat="1" duration="2.5" note="G2" wave="0"/>
+<note measure="22" beat="1" duration="2.5" note="G2" wave="1"/>
 </instrument>
 
 </score>
